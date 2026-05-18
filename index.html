@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slim Fit Pro – मोटापे से छुटकारा | Prakriti Herbal</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Baloo+2:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-dark: #0f2d0f;
+    --green-mid: #1e5c1e;
+    --green-bright: #2e8b2e;
+    --teal: #0e6b5e;
+    --gold: #b8860b;
+    --gold-light: #e0a820;
+    --gold-pale: #fdf3d0;
+    --cream: #faf8f2;
+    --red: #c0392b;
+    --red-bright: #e74c3c;
+    --white: #fff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; min-width: 0; }
+  img, svg { max-width: 100%; height: auto; display: block; }
+  html {
+    scroll-behavior: smooth;
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    overflow-x: hidden;
+    touch-action: pan-y;
+    overscroll-behavior-x: none;
+  }
+  body {
+    font-family: 'Baloo 2', 'Tiro Devanagari Hindi', sans-serif;
+    background: var(--cream);
+    color: #1a1a1a;
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    overflow-x: hidden;
+    touch-action: pan-y;
+    overscroll-behavior-x: none;
+    word-break: break-word;
+  }
+  section, .hero, .pricing, .lead-section, nav, .hero-left, .hero-right, .hero-image-card, .hero-form-wrapper, .trust-strip, .product-showcase, .plans-grid, .prob-grid, .ben-grid, .steps, .testi-grid, .faq-list {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .plan-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+  .plan-tabs::-webkit-scrollbar { display: none; }
+  .plan-tab { flex: 0 0 auto; }
+  .hero-right, .hero-image-card, .hero-image-stack, .product-img-box {
+    overflow: hidden;
+  }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 999;
+    background: rgba(15,45,15,0.98);
+    backdrop-filter: blur(12px);
+    padding: 14px 36px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.92);
+    border: 1.5px solid rgba(224,168,32,0.4);
+    border-radius: 28px;
+    flex-shrink: 0;
+  }
+  .nav-logo img {
+    height: 50px; width: auto; border-radius: 12px;
+    padding: 6px; background: rgba(240,240,240,0.8);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    border: 1px solid rgba(46,139,46,0.12);
+  }
+  .nav-logo-text {
+    color: var(--green-dark); font-size: 1.1rem; font-weight: 900;
+    letter-spacing: 0.5px; white-space: nowrap; font-size: clamp(0.95rem, 2vw, 1.15rem);
+  }
+  .nav-btn {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #fff; border: none; padding: 10px 24px;
+    border-radius: 40px; font-family: 'Baloo 2', sans-serif;
+    font-weight: 800; font-size: 0.92rem; cursor: pointer;
+    box-shadow: 0 4px 18px rgba(184,134,11,0.4);
+    transition: transform .2s, box-shadow .2s;
+    text-decoration: none; display: inline-block;
+  }
+  .nav-btn:hover { transform: scale(1.05); box-shadow: 0 8px 28px rgba(184,134,11,0.55); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(150deg, #061806 0%, #0f3320 45%, #0a2828 100%);
+    display: grid; grid-template-columns: minmax(320px, 1.4fr) minmax(280px, 0.85fr);
+    align-items: center; gap: 40px;
+    padding: 110px 40px 80px;
+    position: relative; overflow: hidden;
+    max-width: 100%;
+  }
+  .hero-left {
+    display: flex; flex-direction: column;
+    gap: 22px;
+    max-width: 700px;
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-form-wrapper {
+    margin-top: 24px; background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12); border-radius: 20px;
+    padding: 26px 24px 24px;
+    backdrop-filter: blur(8px);
+    max-width: 520px;
+    width: 100%;
+  }
+  .hero-form-title { font-size: 0.95rem; font-weight: 800; color: var(--gold-light); margin-bottom: 16px; }
+  .hero-form-fld { margin-bottom: 12px; }
+  .hero-form-fld label { display: block; font-size: 0.8rem; color: rgba(255,255,255,0.65); font-weight: 700; margin-bottom: 5px; }
+  .hero-form-fld input, .hero-form-fld select {
+    width: 100%; background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15); color: #fff;
+    padding: 11px 14px; border-radius: 10px; font-size: 0.9rem;
+    font-family: 'Baloo 2', sans-serif;
+  }
+  .hero-form-fld input::placeholder { color: rgba(255,255,255,0.25); }
+  .hero-form-fld input:focus, .hero-form-fld select:focus {
+    border-color: var(--gold-light); background: rgba(255,255,255,0.12); outline: none;
+  }
+  .hero-form-fld select option { background: #0f2d0f; color: #fff; }
+  .hero-form-btn {
+    width: 100%; background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #fff; border: none; padding: 13px; border-radius: 10px;
+    font-weight: 800; font-size: 0.95rem; cursor: pointer; margin-top: 8px;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 6px 20px rgba(184,134,11,0.4);
+  }
+  .hero-form-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(184,134,11,0.5); }
+  .hero-form-note { font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-top: 10px; text-align: center; }
+  .hero::after {
+    content: '';
+    position: absolute; right: -100px; top: -100px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(46,139,46,0.12), transparent 65%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(224,168,32,0.15); border: 1px solid rgba(224,168,32,0.4);
+    color: var(--gold-light); padding: 7px 20px; border-radius: 40px;
+    font-size: 0.82rem; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    color: #fff; line-height: 1.18; margin-bottom: 18px; font-weight: 900;
+    max-width: 860px;
+  }
+  .hero h1 .highlight { color: var(--gold-light); }
+  .hero h1 .red-text { color: #ff6b6b; }
+  .hero-desc {
+    color: rgba(255,255,255,0.82);
+    font-size: 1.05rem; line-height: 1.75;
+    margin-bottom: 30px; max-width: 680px;
+  }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 34px; }
+  .chip {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #fff; padding: 7px 16px; border-radius: 30px;
+    font-size: 0.85rem; font-weight: 600;
+  }
+  .chip::before { content: '✓ '; color: #5ddb5d; }
+  .hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #fff; border: none; padding: 16px 36px; border-radius: 50px;
+    font-family: 'Baloo 2', sans-serif; font-weight: 900;
+    font-size: 1.05rem; cursor: pointer;
+    box-shadow: 0 8px 28px rgba(184,134,11,0.45);
+    transition: transform .2s, box-shadow .2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 14px 38px rgba(184,134,11,0.55); }
+  .btn-outline {
+    background: transparent; color: #fff;
+    border: 2px solid rgba(255,255,255,0.35);
+    padding: 14px 28px; border-radius: 50px;
+    font-family: 'Baloo 2', sans-serif; font-weight: 700;
+    font-size: 0.95rem; cursor: pointer;
+    transition: border-color .2s, background .2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.07); }
+
+  .hero-right { position: relative; display: flex; justify-content: flex-end; align-items: center; overflow: hidden; }
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    left: -10%;
+    top: 18%;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(224,168,32,0.18), transparent 65%);
+    filter: blur(24px);
+    pointer-events: none;
+  }
+  .hero-image-card {
+    background: rgba(255,255,255,0.08); border-radius: 32px;
+    padding: 26px; box-shadow: 0 30px 70px rgba(0,0,0,0.14);
+    border: 1px solid rgba(255,255,255,0.18);
+    max-width: 440px; width: 100%; position: relative; overflow: hidden;
+    min-height: 420px;
+  }
+  .hero-image-stack { position: relative; display: grid; place-items: center; width: 100%; max-width: 100%; }
+  .hero-image-stack img {
+    width: 100%; max-width: 400px; height: auto; object-fit: contain;
+    animation: floatImg 3.5s ease-in-out infinite;
+  }
+  .hero-image-secondary {
+    position: absolute; right: 10px; bottom: -8px;
+    width: 260px; transform: rotate(6deg);
+    box-shadow: 0 22px 50px rgba(0,0,0,0.14);
+  }
+  
+  /* ─── PRODUCT IMAGE STYLES ─── */
+  .product-showcase {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px; margin: 40px 0; align-items: center;
+  }
+  .product-img-box {
+    background: rgba(46,139,46,0.08); border: 1px solid rgba(46,139,46,0.18);
+    border-radius: 32px; padding: 40px; text-align: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 380px; transition: transform .25s, box-shadow .25s;
+    backdrop-filter: blur(10px);
+  }
+  .product-img-box:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(46,139,46,0.12); }
+  .product-img-box img { width: auto; max-width: 360px; height: auto; object-fit: contain; }
+  .product-label { font-size: 1.1rem; color: var(--gold-light); font-weight: 900; margin-top: 20px; }
+  @keyframes floatImg { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
+  .hero-glow {
+    position: absolute; width: 280px; height: 280px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(46,139,46,0.22), transparent);
+    pointer-events: none;
+  }
+
+  /* ─── TRUST STRIP ─── */
+  .trust-strip {
+    background: var(--green-dark);
+    padding: 32px 40px;
+    display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
+    border-top: 2px solid rgba(224,168,32,0.18);
+    border-bottom: 2px solid rgba(224,168,32,0.18);
+  }
+  .trust-item { text-align: center; color: #fff; }
+  .trust-big { font-family: 'Baloo 2', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--gold-light); line-height: 1; }
+  .trust-small { font-size: 0.78rem; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 1.2px; margin-top: 5px; font-weight: 700; }
+
+  /* ─── SHARED ─── */
+  section { padding: 80px 60px; }
+  .sec-label {
+    display: inline-block;
+    background: rgba(14,107,94,0.1); border: 1px solid var(--teal);
+    color: var(--teal); padding: 5px 18px; border-radius: 30px;
+    font-size: 0.77rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 14px;
+  }
+  .sec-title {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: clamp(1.9rem, 3vw, 2.8rem);
+    color: var(--green-dark); font-weight: 900;
+    line-height: 1.25; margin-bottom: 14px;
+  }
+  .sec-title span { color: var(--teal); }
+  .sec-sub { color: #555; font-size: 1rem; line-height: 1.75; max-width: 560px; }
+  .center { text-align: center; }
+  .center .sec-sub { margin: 0 auto; }
+
+  /* ─── PROBLEMS ─── */
+  .problems { background: #fff; }
+  .prob-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 44px; }
+  .prob-card {
+    background: linear-gradient(135deg, #fff5f5, #fff0f0);
+    border: 1px solid rgba(192,57,43,0.12);
+    border-radius: 18px; padding: 28px 22px; text-align: center;
+  }
+  .prob-icon { font-size: 2.4rem; margin-bottom: 12px; display: block; }
+  .prob-card h3 { font-size: 1rem; color: var(--red); font-weight: 800; margin-bottom: 8px; }
+  .prob-card p { font-size: 0.87rem; color: #666; line-height: 1.6; }
+
+  /* ─── SOLUTION ─── */
+  .solution {
+    background: linear-gradient(135deg, #061806, #0f3a1a, #08242a);
+    color: #fff;
+  }
+  .solution-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .solution-img img {
+    width: 100%; border-radius: 22px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  }
+  .solution .sec-title { color: #fff; }
+  .solution .sec-label { background: rgba(224,168,32,0.15); border-color: var(--gold); color: var(--gold-light); }
+  .solution .sec-sub { color: rgba(255,255,255,0.7); }
+  .ingr-list { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
+  .ingr-row {
+    display: flex; align-items: center; gap: 14px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; padding: 14px 18px;
+  }
+  .ingr-row span:first-child { font-size: 1.7rem; }
+  .ingr-row strong { display: block; color: var(--gold-light); font-size: 0.92rem; }
+  .ingr-row small { color: rgba(255,255,255,0.55); font-size: 0.8rem; }
+
+  /* ─── BENEFITS ─── */
+  .benefits { background: var(--cream); }
+  .ben-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; margin-top: 44px; }
+  .ben-card {
+    background: linear-gradient(135deg, #edfaed, #e0f5e0);
+    border: 1px solid rgba(30,92,30,0.15);
+    border-radius: 20px; padding: 30px 24px; text-align: center;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .ben-card:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(30,92,30,0.14); }
+  .ben-icon { font-size: 2.8rem; margin-bottom: 14px; display: block; }
+  .ben-card h3 { font-size: 1.05rem; color: var(--green-dark); font-weight: 800; margin-bottom: 8px; }
+  .ben-card p { font-size: 0.88rem; color: #555; line-height: 1.65; }
+
+  /* ─── PRICING ─── */
+  .pricing {
+    background: linear-gradient(150deg, #061806, #0f3320, #0a2828);
+    padding: 80px 60px;
+  }
+  .pricing .sec-title { color: #fff; }
+  .pricing .sec-label { background: rgba(224,168,32,0.15); border-color: var(--gold); color: var(--gold-light); }
+  .pricing .sec-sub { color: rgba(255,255,255,0.65); }
+
+  .plan-tabs { display: flex; gap: 12px; margin: 34px 0 30px; flex-wrap: wrap; }
+  .plan-tab {
+    padding: 10px 24px; border-radius: 40px; border: 2px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.65); font-weight: 700; font-family: 'Baloo 2', sans-serif;
+    cursor: pointer; transition: all .2s; font-size: 0.9rem; background: transparent;
+  }
+  .plan-tab.active {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-color: transparent; color: #fff;
+    box-shadow: 0 4px 18px rgba(184,134,11,0.4);
+  }
+
+  .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px; }
+  .plan-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 22px; padding: 34px 28px;
+    position: relative; transition: transform .25s, box-shadow .25s;
+  }
+  .plan-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.4); }
+  .plan-card.best {
+    border-color: var(--gold-light);
+    background: rgba(224,168,32,0.08);
+    box-shadow: 0 0 0 2px rgba(224,168,32,0.3);
+  }
+  .best-badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #fff; padding: 5px 22px; border-radius: 30px;
+    font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; white-space: nowrap;
+  }
+  .plan-name { color: var(--gold-light); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+  .plan-title { color: #fff; font-size: 1.2rem; font-weight: 900; margin-bottom: 18px; line-height: 1.3; }
+  .plan-price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+  .plan-price { font-size: 2.4rem; font-weight: 900; color: #fff; }
+  .plan-price sup { font-size: 1.2rem; }
+  .plan-og { font-size: 1rem; color: rgba(255,255,255,0.35); text-decoration: line-through; }
+  .plan-save {
+    display: inline-block;
+    background: rgba(231,76,60,0.2); border: 1px solid rgba(231,76,60,0.4);
+    color: #ff9d9d; font-size: 0.78rem; font-weight: 700;
+    padding: 3px 12px; border-radius: 20px; margin-bottom: 20px;
+  }
+  .plan-prepaid {
+    background: rgba(46,139,46,0.15); border: 1px solid rgba(46,139,46,0.3);
+    border-radius: 10px; padding: 10px 14px; margin-bottom: 20px;
+  }
+  .plan-prepaid p { color: #7dff7d; font-size: 0.83rem; font-weight: 700; }
+  .plan-prepaid small { color: rgba(255,255,255,0.45); font-size: 0.75rem; }
+  .plan-features { list-style: none; margin-bottom: 26px; display: flex; flex-direction: column; gap: 10px; }
+  .plan-features li { color: rgba(255,255,255,0.75); font-size: 0.88rem; display: flex; align-items: flex-start; gap: 9px; }
+  .plan-features li::before { content: '✓'; color: #5ddb5d; font-weight: 900; flex-shrink: 0; }
+  .plan-btn {
+    width: 100%; padding: 14px; border-radius: 14px; border: none;
+    font-family: 'Baloo 2', sans-serif; font-weight: 900; font-size: 1rem;
+    cursor: pointer; transition: transform .2s, box-shadow .2s;
+  }
+  .plan-btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; box-shadow: 0 6px 22px rgba(184,134,11,0.4); }
+  .plan-btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(184,134,11,0.55); }
+  .plan-btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.25); }
+  .plan-btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+  /* ─── HOW IT WORKS ─── */
+  .how { background: #fff; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 28px; margin-top: 44px; }
+  .step-card { text-align: center; padding: 28px 18px; }
+  .step-num {
+    width: 58px; height: 58px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--green-mid));
+    color: #fff; font-size: 1.4rem; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 18px;
+    box-shadow: 0 8px 22px rgba(14,107,94,0.35);
+  }
+  .step-card h3 { font-size: 1rem; font-weight: 800; color: var(--green-dark); margin-bottom: 8px; }
+  .step-card p { font-size: 0.87rem; color: #666; line-height: 1.65; }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials { background: var(--cream); }
+  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px; margin-top: 44px; }
+  .testi-card {
+    background: #fff;
+    border: 1px solid rgba(30,92,30,0.1);
+    border-radius: 20px; padding: 28px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    transition: transform .25s;
+  }
+  .testi-card:hover { transform: translateY(-5px); }
+  .stars { color: #f5a623; font-size: 1.05rem; margin-bottom: 12px; }
+  .testi-card blockquote { font-size: 0.93rem; color: #444; line-height: 1.75; font-style: italic; margin-bottom: 18px; }
+  .testi-person { display: flex; align-items: center; gap: 12px; }
+  .avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--green-mid));
+    color: #fff; font-weight: 900; font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .t-name { font-weight: 800; color: var(--green-dark); font-size: 0.9rem; }
+  .t-loc { font-size: 0.77rem; color: #999; }
+  .t-verified { font-size: 0.72rem; color: var(--teal); font-weight: 700; }
+
+  /* ─── URGENCY BANNER ─── */
+  .urgency-banner {
+    background: linear-gradient(135deg, #8b0000, #c0392b, #e74c3c);
+    padding: 50px 60px; text-align: center; color: #fff; position: relative; overflow: hidden;
+  }
+  .urgency-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 14px);
+  }
+  .urgency-banner h2 {
+    font-family: 'Baloo 2', sans-serif; font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+    font-weight: 900; margin-bottom: 10px; position: relative;
+  }
+  .urgency-banner p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; position: relative; }
+  .countdown { display: flex; gap: 16px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap; }
+  .cd-box { background: rgba(0,0,0,0.3); border-radius: 12px; padding: 12px 18px; min-width: 68px; text-align: center; }
+  .cd-n { font-size: 2rem; font-weight: 900; line-height: 1; }
+  .cd-l { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.75; }
+
+  /* ─── LEAD FORM ─── */
+  .lead-section {
+    background: linear-gradient(150deg, #061806, #0f3a1a, #08242a);
+    padding: 80px 60px; position: relative; overflow: hidden;
+  }
+  .lead-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(46,139,46,0.1), transparent 60%);
+    pointer-events: none;
+  }
+  .lead-section .sec-title { color: #fff; }
+  .lead-section .sec-label { background: rgba(224,168,32,0.15); border-color: var(--gold); color: var(--gold-light); }
+  .lead-section .sec-sub { color: rgba(255,255,255,0.65); }
+
+  .form-wrap {
+    max-width: 580px; margin: 0 auto;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 26px; padding: 42px;
+    backdrop-filter: blur(12px); position: relative;
+  }
+  .form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .fld { display: flex; flex-direction: column; gap: 7px; margin-bottom: 16px; }
+  .fld label { color: rgba(255,255,255,0.72); font-size: 0.84rem; font-weight: 700; }
+  .fld input, .fld select {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #fff; padding: 13px 16px; border-radius: 12px;
+    font-family: 'Baloo 2', sans-serif; font-size: 0.95rem;
+    outline: none; width: 100%;
+    transition: border-color .2s, background .2s;
+  }
+  .fld input::placeholder { color: rgba(255,255,255,0.3); }
+  .fld input:focus, .fld select:focus { border-color: var(--gold-light); background: rgba(255,255,255,0.1); }
+  .fld select option { background: #0f2d0f; color: #fff; }
+
+  .submit-btn {
+    width: 100%; background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #fff; border: none; padding: 17px; border-radius: 14px;
+    font-family: 'Baloo 2', sans-serif; font-weight: 900; font-size: 1.08rem;
+    cursor: pointer; letter-spacing: 0.3px;
+    box-shadow: 0 8px 28px rgba(184,134,11,0.45);
+    transition: transform .2s, box-shadow .2s; margin-top: 6px;
+  }
+  .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(184,134,11,0.6); }
+  .form-note { color: rgba(255,255,255,0.38); font-size: 0.76rem; text-align: center; margin-top: 12px; }
+
+  .success-box {
+    display: none; text-align: center; padding: 32px 20px;
+    background: rgba(46,139,46,0.15); border: 1px solid rgba(93,219,93,0.35);
+    border-radius: 18px; color: #fff; margin-top: 16px;
+  }
+  .success-box .big-check { font-size: 3.5rem; margin-bottom: 12px; }
+  .success-box h3 { font-size: 1.4rem; color: #7dff7d; margin-bottom: 10px; }
+  .success-box p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; }
+
+  /* ─── FAQ ─── */
+  .faq { background: #fff; }
+  .faq-list { max-width: 720px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 14px; }
+  .faq-item {
+    border: 1px solid rgba(30,92,30,0.15);
+    border-radius: 16px; overflow: hidden;
+  }
+  .faq-q {
+    padding: 18px 24px; background: #f9fdf9;
+    font-weight: 800; font-size: 0.97rem; color: var(--green-dark);
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    transition: background .2s;
+  }
+  .faq-q:hover { background: #edf8ed; }
+  .faq-q .arrow { font-size: 1.1rem; transition: transform .3s; }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height .35s ease, padding .3s;
+    background: #fff; color: #555; font-size: 0.9rem; line-height: 1.75;
+    padding: 0 24px;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding: 14px 24px 20px; }
+  .faq-item.open .arrow { transform: rotate(180deg); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--green-dark); color: rgba(255,255,255,0.5);
+    text-align: center; padding: 28px 40px; font-size: 0.82rem;
+  }
+  footer img { height: 38px; filter: brightness(0) invert(1); opacity: 0.55; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; }
+  footer p { margin-top: 6px; line-height: 1.7; }
+  footer a { color: var(--gold-light); text-decoration: none; }
+
+  /* ─── STICKY BTN ─── */
+  .sticky-float {
+    position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%);
+    z-index: 997; display: none;
+  }
+  .sticky-float a {
+    display: flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #fff; padding: 14px 32px; border-radius: 50px;
+    font-weight: 900; font-size: 0.98rem; text-decoration: none;
+    box-shadow: 0 10px 38px rgba(184,134,11,0.5);
+    white-space: nowrap; transition: transform .2s, box-shadow .2s;
+  }
+  .sticky-float a:hover { transform: translateY(-3px); box-shadow: 0 14px 48px rgba(184,134,11,0.6); }
+  .scroll-top {
+    position: fixed; right: 22px; bottom: 100px;
+    z-index: 998; width: 52px; height: 52px;
+    border-radius: 18px; background: rgba(255,255,255,0.95);
+    color: var(--green-dark); display: none; place-items: center;
+    box-shadow: 0 18px 36px rgba(0,0,0,0.18); cursor: pointer;
+    transition: transform .2s, background .2s;
+  }
+  .scroll-top:hover { transform: translateY(-3px); background: #fff; }
+  .scroll-top span { font-size: 1.6rem; }
+  .whatsapp-float {
+    position: fixed; right: 22px; bottom: 22px;
+    z-index: 998; display: flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, #25d366, #20c851);
+    color: #fff; padding: 14px 18px;
+    border-radius: 50px; font-weight: 700; box-shadow: 0 10px 30px rgba(37,211,102,0.35);
+    text-decoration: none; font-size: 0.95rem; transition: transform .2s;
+  }
+  .whatsapp-float:hover { transform: translateY(-3px); box-shadow: 0 14px 38px rgba(37,211,102,0.45); }
+  .whatsapp-float img { width: 22px; height: 22px; }
+
+
+  /* ─── RESPONSIVE ─── */
+  @media(max-width: 900px){
+    .hero { grid-template-columns: 1fr; padding: 100px 22px 60px; text-align: center; }
+    .hero-left, .hero-right { width: 100%; }
+    .hero-image-card { max-width: 100%; padding: 22px; margin: 0 auto; }
+    .hero-image-stack img { max-width: 320px; }
+    .hero-image-secondary { width: 220px; right: 6px; bottom: -12px; }
+    .hero-chips, .hero-cta-row { justify-content: center; }
+    .hero-form-wrapper { max-width: 100%; width: 100%; }
+    .solution-inner { grid-template-columns: 1fr; }
+    section, .pricing, .lead-section { padding: 60px 20px; }
+    .trust-strip { gap: 24px; padding: 18px 20px; }
+    .form-2col { grid-template-columns: 1fr; }
+    .urgency-banner { padding: 40px 20px; }
+    .sticky-float { display: block; }
+    nav { padding: 10px 18px; }
+    .form-wrap { padding: 28px 18px; }
+    .product-showcase { grid-template-columns: repeat(2, 1fr); }
+    .plans-grid { grid-template-columns: 1fr; }
+    .prob-grid, .ben-grid, .testi-grid, .steps { grid-template-columns: 1fr; }
+    .plan-tabs { justify-content: flex-start; }
+    .plan-tab { white-space: nowrap; }
+    .sec-sub { max-width: 100%; }
+    .hero-desc { max-width: 100%; margin: 0 auto 30px; }
+    .hero-cta-row { flex-wrap: wrap; }
+    .hero-form-fld input, .hero-form-fld select { font-size: 0.95rem; }
+    .hero-image-card { padding: 18px; }
+  }
+
+  @media(max-width: 600px){
+    nav { flex-wrap: wrap; justify-content: center; gap: 10px; padding: 10px 14px; }
+    .nav-logo-text { font-size: 1rem; }
+    .hero { padding: 90px 14px 48px; }
+    .hero-left { align-items: center; }
+    .hero h1 { font-size: clamp(2rem, 7vw, 2.6rem); }
+    .hero-desc { max-width: 100%; margin: 0 auto 22px; font-size: 1rem; }
+    .hero-form-wrapper { margin: 18px auto 0; }
+    .hero-form-fld input, .hero-form-fld select { font-size: 0.95rem; }
+    .hero-image-card { padding: 18px; }
+    .hero-image-stack img { max-width: 260px; }
+    .hero-image-secondary { display: block; width: 180px; right: -8px; bottom: -8px; transform: rotate(4deg); }
+    .product-showcase { grid-template-columns: 1fr; }
+    .product-img-box { padding: 24px 16px; min-height: auto; }
+    .trust-strip { flex-direction: column; align-items: stretch; padding: 18px 16px; }
+    .plan-tabs { justify-content: flex-start; }
+    .sec-sub { max-width: 100%; }
+    .prob-grid, .ben-grid, .plans-grid, .testi-grid, .steps { gap: 18px; }
+    .step-card, .prob-card, .ben-card, .plan-card, .testi-card { padding: 22px 16px; }
+    .lead-section, section, .pricing { padding: 48px 14px; }
+    .form-wrap { padding: 20px 14px; }
+    .faq-list { margin: 22px 0 0; padding: 0 4px; }
+    .hero-cta-row { flex-direction: column; }
+    .btn-gold, .btn-outline { width: 100%; justify-content: center; }
+    .sticky-float { left: auto; right: 16px; transform: none; }
+    .nav-logo { padding: 8px 10px; gap: 10px; }
+    .nav-logo img { height: 44px; }
+    .nav-logo-text { font-size: 0.95rem; }
+    .whatsapp-float { right: 16px; bottom: 16px; font-size: 0.92rem; padding: 12px 16px; }
+    .scroll-top { right: 16px; bottom: 104px; }
+    .hero-image-card, .solution-img, .form-wrap, .product-img-box, .plan-card { width: 100%; }
+    .plan-tab { font-size: 0.85rem; padding: 10px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">
+    <img src="prakriti_logo.png" alt="Prakriti Herbal" style="height: 48px; width: auto;">
+    <span class="nav-logo-text">🌿 Prakriti Herbal</span>
+  </div>
+  <a class="nav-btn" href="#quick-form">🎁 मुफ्त सलाह पाएं</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">🌿 100% शुद्ध आयुर्वेदिक फॉर्मूला</div>
+    <h1>
+      <span class="red-text">मोटापे</span> से छुटकारा पाएं —<br>
+      <span class="highlight">Slim Fit Pro</span> के साथ!
+    </h1>
+    <p class="hero-desc">
+      आयुर्वेदिक दवा जो fat burn करती है, metabolism तेज़ करती है और पाचन सुधारती है — बिना किसी side effect के।
+    </p>
+    <div class="hero-chips">
+      <span class="chip">वज़न घटाएं</span>
+      <span class="chip">पाचन सुधारें</span>
+      <span class="chip">100% नेचुरल</span>
+    </div>
+    
+    <!-- QUICK FORM -->
+    <div class="hero-form-wrapper" id="quick-form">
+      <div class="hero-form-title">⚡ अभी Free Consultation लें</div>
+      
+      <div class="hero-form-fld">
+        <label>नाम *</label>
+        <input type="text" id="qf_name" placeholder="आपका नाम">
+      </div>
+      
+      <div class="hero-form-fld">
+        <label>मोबाइल नंबर *</label>
+        <input type="tel" id="qf_phone" placeholder="+91 98765 43210">
+      </div>
+      
+      <div class="hero-form-fld">
+        <label>कितने महीने का कोर्स चाहते हैं? *</label>
+        <select id="qf_plan">
+          <option value="" disabled selected>प्लान चुनें</option>
+          <option value="1 Month - ₹1600">1 महीना - ₹1600</option>
+          <option value="2 Month - ₹2499">2 महीना - ₹2499</option>
+          <option value="Combo 1M - ₹2599">Combo 1 महीना - ₹2599</option>
+          <option value="Combo 2M - ₹3999">Combo 2 महीना - ₹3999</option>
+          <option value="Expert से बात करूंगा">Expert से बात करूंगा</option>
+        </select>
+      </div>
+      
+      <button class="hero-form-btn" onclick="submitQuickForm()">
+        🎁 मुझे कॉल करें →
+      </button>
+      <p class="hero-form-note">सिर्फ 2 मिनट लगेंगे</p>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <a href="#pricing" class="btn-outline">सभी प्लान देखें ↓</a>
+    </div>
+  </div>
+  
+  <div class="hero-right">
+    <div class="hero-glow"></div>
+    <div class="hero-image-card">
+      <div class="hero-image-stack">
+        <img src="slim_fit_bottle.png" alt="Slim Fit Pro Bottle" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 400%22%3E%3Crect fill=%22%23f5f5f5%22 width=%22300%22 height=%22400%22/%3E%3Ctext x=%22150%22 y=%22200%22 font-size=%2218%22 text-anchor=%22middle%22 fill=%22%23999%22%3ESlim Fit Pro Bottle%3C/text%3E%3C/svg%3E'">
+        <img class="hero-image-secondary" src="Green_Tea.png" alt="Green Tea Bottle" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item">
+    <div class="trust-big">10,000+</div>
+    <div class="trust-small">खुश ग्राहक</div>
+    <div style="font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-top: 4px;">पूरे भारत में</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-big">100%</div>
+    <div class="trust-small">आयुर्वेदिक फॉर्मूला</div>
+    <div style="font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-top: 4px;">कोई केमिकल नहीं</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-big">0%</div>
+    <div class="trust-small">साइड इफेक्ट</div>
+    <div style="font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-top: 4px;">पूरी तरह सुरक्षित</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-big">30 दिन</div>
+    <div class="trust-small">मनी बैक गारंटी</div>
+    <div style="font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-top: 4px;">कोई सवाल नहीं</div>
+  </div>
+</div>
+
+<!-- PROBLEMS -->
+<section class="problems">
+  <div class="center">
+    <div class="sec-label">क्या आप इससे परेशान हैं?</div>
+    <h2 class="sec-title">ये समस्याएं <span>आपको रोक</span> रही हैं</h2>
+  </div>
+  <div class="prob-grid">
+    <div class="prob-card"><span class="prob-icon">😓</span><h3>बढ़ता पेट</h3><p>खाना खाते ही पेट फूल जाता है और मोटापा दिन-ब-दिन बढ़ता जाता है।</p></div>
+    <div class="prob-card"><span class="prob-icon">🍔</span><h3>बेकाबू भूख</h3><p>खाने की क्रेविंग बंद नहीं होती और डाइटिंग से थक चुके हैं।</p></div>
+    <div class="prob-card"><span class="prob-icon">😴</span><h3>थकान और सुस्ती</h3><p>दिनभर आलस रहता है, एनर्जी नहीं आती, काम में मन नहीं लगता।</p></div>
+    <div class="prob-card"><span class="prob-icon">⚖️</span><h3>घटता नहीं वज़न</h3><p>जिम और डाइट सब ट्राई कर लिया, पर वज़न कम नहीं होता।</p></div>
+    <div class="prob-card"><span class="prob-icon">😞</span><h3>आत्मविश्वास की कमी</h3><p>बढ़े हुए वज़न की वजह से खुद अच्छे नहीं लगते, कपड़े फिट नहीं होते।</p></div>
+    <div class="prob-card"><span class="prob-icon">🏥</span><h3>पाचन की समस्या</h3><p>पेट में गैस, एसिडिटी और कब्ज़ की शिकायत बनी रहती है।</p></div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution">
+  <div class="solution-inner">
+    <div class="solution-img" style="display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.08); border-radius: 20px; min-height: 300px;">
+      <div style="text-align: center;">
+        <img src="bottle_both.png" alt="Slim Fit Pro + Green Tea Bundle" style="width: 100%; max-width: 360px; border-radius: 16px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 280 320%22%3E%3Crect fill=%22rgba(255,255,255,0.08)%22 width=%22280%22 height=%22320%22/%3E%3Ctext x=%22140%22 y=%22160%22 font-size=%2216%22 text-anchor=%22middle%22 fill=%22%23ccc%22%3ESlim Fit Pro + Green Tea%3C/text%3E%3C/svg%3E'">
+      </div>
+    </div>
+    <div>
+      <div class="sec-label">हमारा समाधान</div>
+      <h2 class="sec-title" style="color:#fff">Slim Fit Pro + <span style="color:var(--gold-light)">Green Tea Booster</span></h2>
+      <p class="sec-sub" style="color:rgba(255,255,255,0.7)">
+        Prakriti Herbal का यह आयुर्वेदिक कॉम्बो आपके शरीर को अंदर से ठीक करता है —
+        fat burn करता है, detox करता है और metabolism तेज़ करता है।
+      </p>
+      <div class="ingr-list">
+        <div class="ingr-row">
+          <span>🌱</span>
+          <div><strong>ग्रीन टी एक्सट्रैक्ट</strong><small>Fat oxidation 17% तक बढ़ाता है</small></div>
+        </div>
+        <div class="ingr-row">
+          <span>🍋</span>
+          <div><strong>गार्सिनिया कैंबोजिया</strong><small>भूख कम करता है, fat storage रोकता है</small></div>
+        </div>
+        <div class="ingr-row">
+          <span>🌿</span>
+          <div><strong>त्रिफला</strong><small>पाचन सुधारता है, detox करता है</small></div>
+        </div>
+        <div class="ingr-row">
+          <span>🌶️</span>
+          <div><strong>अदरक और काली मिर्च</strong><small>Metabolism तेज़ करती है स्वाभाविक रूप से</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="center">
+    <div class="sec-label">फायदे</div>
+    <h2 class="sec-title">क्यों <span>Slim Fit Pro</span> काम करती है?</h2>
+  </div>
+  <div class="ben-grid">
+    <div class="ben-card"><span class="ben-icon">🔥</span><h3>Fat Burning तेज़ करे</h3><p>Thermogenic herbs metabolism को naturally boost करती हैं और fat जल्दी burn होती है।</p></div>
+    <div class="ben-card"><span class="ben-icon">🌿</span><h3>Body Detox करे</h3><p>शरीर से ज़हरीले पदार्थ बाहर निकालती है जो वज़न घटाने में रुकावट डालते हैं।</p></div>
+    <div class="ben-card"><span class="ben-icon">⚡</span><h3>एनर्जी बढ़ाए</h3><p>दिनभर natural energy मिलती है — कोई jitters नहीं, कोई crash नहीं।</p></div>
+    <div class="ben-card"><span class="ben-icon">💧</span><h3>Bloating कम करे</h3><p>पेट की सूजन और gas की समस्या दूर करे, महसूस करें हल्केपन का एहसास।</p></div>
+    <div class="ben-card"><span class="ben-icon">⚖️</span><h3>भूख नियंत्रित करे</h3><p>Natural herbs से भूख कम होती है और ज़्यादा खाने की इच्छा घटती है।</p></div>
+    <div class="ben-card"><span class="ben-icon">🛡️</span><h3>100% Safe</h3><p>पूरी तरह आयुर्वेदिक — कोई harmful chemical नहीं, कोई side effect नहीं।</p></div>
+  </div>
+
+  <!-- PRODUCT SHOWCASE -->
+  <div style="margin-top: 60px; padding: 40px; background: rgba(46,139,46,0.08); border-radius: 24px; text-align: center;">
+    <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--green-dark); margin-bottom: 30px;">🎁 हमारे Products</h3>
+    <div class="product-showcase">
+      <div class="product-img-box">
+        <img src="slim_fit_bottle.png" alt="Slim Fit Pro" style="max-width: 320px; height: auto; object-fit: contain;">
+        <div class="product-label">Slim Fit Pro</div>
+      </div>
+      <div class="product-img-box">
+        <img src="Green_Tea.png" alt="Green Tea Booster" style="max-width: 320px; height: auto; object-fit: contain;">
+        <div class="product-label">Green Tea Booster</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="center">
+    <div class="sec-label">प्राइस & ऑफर</div>
+    <h2 class="sec-title" style="color:#fff">आज के <span style="color:var(--gold-light)">Special Plans</span> देखें</h2>
+    <p class="sec-sub" style="color:rgba(255,255,255,0.62);margin:0 auto">Prepaid order पर अतिरिक्त ₹200–₹300 की छूट पाएं!</p>
+  </div>
+
+  <div class="plan-tabs">
+    <button class="plan-tab active" onclick="showPlans('all')">सभी Plans</button>
+    <button class="plan-tab" onclick="showPlans('basic')">सिर्फ Slim Fit Pro</button>
+    <button class="plan-tab" onclick="showPlans('combo')">Slim Fit Pro + Green Tea</button>
+  </div>
+
+  <div class="plans-grid" id="plans-container">
+
+    <!-- Plan 1 -->
+    <div class="plan-card" data-type="basic">
+      <div class="plan-name">Basic Plan</div>
+      <div class="plan-title">Slim Fit Pro<br>1 महीना</div>
+      <div class="plan-price-row">
+        <div class="plan-price"><sup>₹</sup>1600</div>
+        <div class="plan-og">₹3000</div>
+      </div>
+      <div class="plan-save">47% की बचत!</div>
+      <ul class="plan-features">
+        <li>Slim Fit Pro — 30 Tablets (1 महीना)</li>
+        <li>आयुर्वेदिक Fat Burn Formula</li>
+        <li>Metabolism Boost करे</li>
+        <li>Free Expert Consultation</li>
+      </ul>
+      <button class="plan-btn plan-btn-outline" onclick="selectPlan('Slim Fit Pro – 1 Month ₹1600')">Order करें</button>
+    </div>
+
+    <!-- Plan 2 — BEST -->
+    <div class="plan-card best" data-type="basic">
+      <div class="best-badge">⭐ सबसे Popular</div>
+      <div class="plan-name">Best Value</div>
+      <div class="plan-title">Slim Fit Pro<br>2 महीना (1 Free!)</div>
+      <div class="plan-price-row">
+        <div class="plan-price"><sup>₹</sup>2499</div>
+        <div class="plan-og">₹6000</div>
+      </div>
+      <div class="plan-save">58% की बचत!</div>
+      <div class="plan-prepaid">
+        <p>💳 Prepaid में सिर्फ ₹2299</p>
+        <small>अतिरिक्त ₹200 की छूट</small>
+      </div>
+      <ul class="plan-features">
+        <li>Slim Fit Pro — 60 Tablets (2 महीना)</li>
+        <li>1 महीना खरीदो, 1 महीना FREE पाओ</li>
+        <li>Double Fat Burn Results</li>
+        <li>Priority Customer Support</li>
+        <li>Free Expert Consultation</li>
+      </ul>
+      <button class="plan-btn plan-btn-gold" onclick="selectPlan('Slim Fit Pro – 2 Month ₹2499 (1 Free)')">अभी Order करें →</button>
+    </div>
+
+    <!-- Plan 3 -->
+    <div class="plan-card" data-type="combo">
+      <div class="plan-name">Combo Plan</div>
+      <div class="plan-title">Slim Fit Pro + Green Tea<br>1 महीना</div>
+      <div class="plan-price-row">
+        <div class="plan-price"><sup>₹</sup>2599</div>
+        <div class="plan-og">₹3999</div>
+      </div>
+      <div class="plan-save">35% की बचत!</div>
+      <ul class="plan-features">
+        <li>Slim Fit Pro — 30 Tablets</li>
+        <li>Green Tea Booster — 30 Tablets</li>
+        <li>Double Action Fat Burn</li>
+        <li>Body Detox Formula</li>
+        <li>Free Expert Consultation</li>
+      </ul>
+      <button class="plan-btn plan-btn-outline" onclick="selectPlan('Slim Fit Pro + Green Tea – 1 Month ₹2599')">Order करें</button>
+    </div>
+
+    <!-- Plan 4 — Best Combo -->
+    <div class="plan-card best" data-type="combo">
+      <div class="best-badge">🔥 Maximum Results</div>
+      <div class="plan-name">Super Combo</div>
+      <div class="plan-title">Slim Fit Pro + Green Tea<br>2 महीना</div>
+      <div class="plan-price-row">
+        <div class="plan-price"><sup>₹</sup>3999</div>
+        <div class="plan-og">₹7998</div>
+      </div>
+      <div class="plan-save">50% की बचत!</div>
+      <div class="plan-prepaid">
+        <p>💳 Prepaid में सिर्फ ₹3699</p>
+        <small>अतिरिक्त ₹300 की छूट</small>
+      </div>
+      <ul class="plan-features">
+        <li>Slim Fit Pro — 60 Tablets (2 महीना)</li>
+        <li>Green Tea Booster — 60 Tablets</li>
+        <li>सबसे तेज़ Fat Burn Results</li>
+        <li>Complete Detox & Weight Loss System</li>
+        <li>Priority VIP Support</li>
+        <li>Free Expert Consultation</li>
+      </ul>
+      <button class="plan-btn plan-btn-gold" onclick="selectPlan('Slim Fit Pro + Green Tea – 2 Month ₹3999')">अभी Order करें →</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="center">
+    <div class="sec-label">कैसे काम करता है</div>
+    <h2 class="sec-title">बस <span>4 आसान Steps</span> में शुरू करें</h2>
+  </div>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <h3>Form भरें</h3>
+      <p>नीचे अपनी details भरें और Free Expert Consultation book करें।</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <h3>Expert Call</h3>
+      <p>हमारा आयुर्वेदिक expert 24 घंटे में call करेगा और आपको सही plan बताएगा।</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <h3>Order Confirm</h3>
+      <p>अपना पसंदीदा plan चुनें और doorstep delivery पाएं सीधे घर पर।</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <h3>Result देखें</h3>
+      <p>2–4 हफ्तों में फर्क महसूस करें — हल्का महसूस करें, confident रहें!</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="center">
+    <div class="sec-label">Real Results</div>
+    <h2 class="sec-title">हमारे <span>ग्राहकों</span> ने क्या कहा?</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"6 हफ्तों में मेरे 8 kg कम हुए! कोई side effect नहीं और दिनभर energy बनी रहती है। Prakriti Herbal ने मेरी ज़िंदगी बदल दी।"</blockquote>
+      <div class="testi-person">
+        <div class="avatar">प</div>
+        <div><div class="t-name">प्रिया शर्मा</div><div class="t-loc">दिल्ली</div><div class="t-verified">✓ Verified Buyer</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"सालों से weight loss products आज़माए — पहली बार कुछ actually काम आया। पाचन भी पहले हफ्ते से बेहतर हो गया।"</blockquote>
+      <div class="testi-person">
+        <div class="avatar">र</div>
+        <div><div class="t-name">राजेश कुमार</div><div class="t-loc">मुंबई</div><div class="t-verified">✓ Verified Buyer</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Green Tea Combo game changer है! Bloating बिल्कुल गायब हो गई, waist 3 इंच कम हुई और cravings भी कम हो गई। सभी को recommend करूंगी!"</blockquote>
+      <div class="testi-person">
+        <div class="avatar">अ</div>
+        <div><div class="t-name">अनीता पटेल</div><div class="t-loc">अहमदाबाद</div><div class="t-verified">✓ Verified Buyer</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY BANNER -->
+<div class="urgency-banner">
+  <h2>⚡ सीमित समय का ऑफर — जल्दी करें!</h2>
+  <p>आज Free Consultation लेने पर Special Discount और Free Green Tea Sample पाएं</p>
+  <div class="countdown">
+    <div class="cd-box"><div class="cd-n" id="cdh">09</div><div class="cd-l">घंटे</div></div>
+    <div class="cd-box"><div class="cd-n" id="cdm">47</div><div class="cd-l">मिनट</div></div>
+    <div class="cd-box"><div class="cd-n" id="cds">32</div><div class="cd-l">सेकंड</div></div>
+  </div>
+  <a href="#order" class="btn-gold">🎁 अभी Claim करें</a>
+</div>
+
+<!-- LEAD FORM -->
+<section class="lead-section" id="order">
+  <div class="center">
+    <div class="sec-label">Free Consultation</div>
+    <h2 class="sec-title">अपना <span style="color:var(--gold-light)">Transformation</span> आज शुरू करें</h2>
+    <p class="sec-sub">अपनी details भरें — हमारा आयुर्वेदिक expert 24 घंटे में call करेगा और आपको<br>बिल्कुल FREE personalised weight loss plan देगा।</p>
+  </div>
+
+  <div class="form-wrap" style="margin-top:40px">
+    <div id="form-body">
+
+      <div class="fld">
+        <label>नाम *</label>
+        <input type="text" id="f_name" placeholder="जैसे: प्रिया शर्मा">
+      </div>
+
+      <div class="fld">
+        <label>मोबाइल नंबर *</label>
+        <input type="tel" id="f_phone" placeholder="+91 98765 43210">
+      </div>
+
+      <div class="fld">
+        <label>वर्तमान वज़न (kg)</label>
+        <input type="number" id="f_weight" placeholder="जैसे: 80" min="30" max="300">
+      </div>
+
+      <div class="fld">
+        <label>आप कौन सा Plan चाहते हैं? *</label>
+        <select id="f_plan">
+          <option value="" disabled selected>Plan चुनें</option>
+          <option>Slim Fit Pro — 1 Month (₹1600)</option>
+          <option>Slim Fit Pro — 2 Month / 1 Free (₹2499)</option>
+          <option>Slim Fit Pro + Green Tea — 1 Month (₹2599)</option>
+          <option>Slim Fit Pro + Green Tea — 2 Month (₹3999)</option>
+          <option>मुझे Expert से बात करके तय करना है</option>
+        </select>
+      </div>
+
+      <div class="fld">
+        <label>मुख्य लक्ष्य *</label>
+        <select id="f_goal">
+          <option value="" disabled selected>लक्ष्य चुनें</option>
+          <option>5–10 kg वज़न घटाना</option>
+          <option>10–20 kg वज़न घटाना</option>
+          <option>20+ kg वज़न घटाना</option>
+          <option>पेट की चर्बी कम करना</option>
+          <option>पाचन सुधारना</option>
+          <option>Energy और Fitness बढ़ाना</option>
+        </select>
+      </div>
+
+      <button class="submit-btn" onclick="submitLead()">
+        🌿 मुझे Free Consultation चाहिए →
+      </button>
+      <p class="form-note">🔒 आपकी जानकारी 100% सुरक्षित है। हम कभी spam नहीं करते।</p>
+    </div>
+
+    <div class="success-box" id="success-box">
+      <div class="big-check">✅</div>
+      <h3>शुक्रिया! जल्द ही Call आएगी</h3>
+      <p>हमारा आयुर्वेदिक expert <strong style="color:var(--gold-light)">24 घंटों में</strong> आपको call करेगा और आपका FREE personalised weight loss plan तैयार करेगा। <br><br>📱 अपना फोन पास रखें!</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="center">
+    <div class="sec-label">आम सवाल</div>
+    <h2 class="sec-title">अक्सर पूछे जाने वाले <span>सवाल</span></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Slim Fit Pro कितने दिनों में असर दिखाती है?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-a">अधिकतर ग्राहकों को 2–4 हफ्तों में फर्क महसूस होता है। बेहतर और तेज़ results के लिए 2 महीने का कोर्स recommended है।</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        क्या इसके कोई side effects हैं?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-a">नहीं। Slim Fit Pro पूरी तरह आयुर्वेदिक और natural है। इसमें कोई harmful chemical नहीं है और यह long-term use के लिए safe है।</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Green Tea Booster अलग से क्यों नहीं मिलता?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-a">Green Tea Booster specially Slim Fit Pro के साथ काम करने के लिए formulate किया गया है। यह capsule के effect को fast और double करता है, इसलिए सिर्फ combo में available है।</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Prepaid order में क्या extra benefit है?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-a">Prepaid order पर आपको अतिरिक्त discount मिलती है — ₹2499 वाले plan पर ₹200 और ₹3999 वाले plan पर ₹300 की extra बचत।</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Delivery कितने दिनों में आती है?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-a">Order confirm होने के बाद 3–7 business days में delivery होती है। सभी major cities में जल्दी delivery available है।</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p style="font-size: 1.1rem; color: var(--gold-light); font-weight: 900; margin-bottom: 8px;">🌿 Prakriti Herbal</p>
+  <p>© 2025 Prakriti Herbal Wellness. सर्वाधिकार सुरक्षित। | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+  <p style="margin-top:6px;font-size:0.74rem;max-width:600px;margin-left:auto;margin-right:auto">
+    *परिणाम अलग-अलग हो सकते हैं। यह product किसी बीमारी का इलाज नहीं है। उपयोग से पहले चिकित्सक की सलाह लें।
+  </p>
+</footer>
+
+<!-- STICKY FLOAT -->
+<div class="sticky-float" id="sfloat">
+  <a href="#order">🌿 Free Consultation लें →</a>
+</div>
+<div class="scroll-top" id="scrollTopBtn" title="Top पर जाएँ" onclick="scrollToTop()">
+  <span>↑</span>
+</div>
+<a class="whatsapp-float" href="https://wa.me/918357899581?text=मुझे%20वजन%20कम%20करने%20की%20जानकारी%20चाहिए" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  Support
+
+</a>
+
+<script>
+// Countdown
+(function(){
+  let t = 9*3600+47*60+32;
+  setInterval(function(){
+    t--; if(t<0) t=24*3600;
+    document.getElementById('cdh').textContent=String(Math.floor(t/3600)).padStart(2,'0');
+    document.getElementById('cdm').textContent=String(Math.floor((t%3600)/60)).padStart(2,'0');
+    document.getElementById('cds').textContent=String(t%60).padStart(2,'0');
+  },1000);
+})();
+
+// Sticky
+window.addEventListener('scroll',function(){
+  document.getElementById('sfloat').style.display=window.scrollY>600?'block':'none';
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  if(scrollBtn) scrollBtn.style.display = window.scrollY>500 ? 'grid' : 'none';
+});
+
+function scrollToTop(){
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Plan Tabs
+function showPlans(type){
+  document.querySelectorAll('.plan-tab').forEach(t=>t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.plan-card').forEach(c=>{
+    if(type==='all'||c.dataset.type===type) c.style.display='';
+    else c.style.display='none';
+  });
+}
+
+// Select Plan → scroll to form + pre-select
+function selectPlan(planName){
+  document.getElementById('f_plan').value=planName;
+  document.getElementById('order').scrollIntoView({behavior:'smooth'});
+}
+
+// NeoDove integration endpoint from your image reference.
+const NEO_DOVE_ENDPOINT = 'https://f3135b6d-5c83-44d6-aa24-7a984859f572.neodove.com/integration/custom/9ffc78c5-f8d4-4e5a-8a15-20df6630283f/leads';
+
+async function sendToNeoDove(payload){
+  try {
+    const response = await fetch(NEO_DOVE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json; charset=UTF-8' },
+      body: JSON.stringify(payload),
+      mode: 'cors'
+    });
+    if(!response.ok){
+      console.error('NeoDove response error', response.status, await response.text());
+      return false;
+    }
+    return true;
+  } catch(err){
+    console.error('NeoDove send failed', err);
+    return false;
+  }
+}
+
+// Quick Hero Form Submit
+async function submitQuickForm(){
+  const name=document.getElementById('qf_name').value.trim();
+  const phone=document.getElementById('qf_phone').value.trim();
+  const plan=document.getElementById('qf_plan').value;
+
+  if(!name||!phone||!plan){
+    alert('कृपया नाम, फोन नंबर और प्लान चुनें।');
+    return;
+  }
+  if(phone.replace(/\D/g,'').length<10){
+    alert('कृपया valid mobile number डालें।');
+    return;
+  }
+
+  const neoPayload = {
+    name,
+    mobile: phone,
+    email: '',
+    detail: plan,
+    detail2: 'Hero form lead',
+    lead_source: 'hero_form',
+    form_name: 'quick_form'
+  };
+
+  const leadData = {name, phone, plan, source:'hero', ts:new Date().toISOString()};
+  let leads = JSON.parse(localStorage.getItem('prakriti_leads') || '[]');
+  leads.push(leadData);
+  localStorage.setItem('prakriti_leads', JSON.stringify(leads));
+
+  const success = await sendToNeoDove(neoPayload);
+  if(success){
+    console.log('NeoDove Quick lead submitted', neoPayload);
+    alert('✅ आपका request भेज दिया गया है। हमारी टीम 24 घंटे में call करेगी।');
+    document.getElementById('qf_name').value='';
+    document.getElementById('qf_phone').value='';
+    document.getElementById('qf_plan').value='';
+  } else {
+    alert('⚠️ अभी NeoDove से कनेक्ट नहीं हो पाया। आपका lead local में save हो गया है।');
+  }
+}
+
+// Form Submit
+async function submitLead(){
+  const fullName=document.getElementById('f_name').value.trim();
+  const phone=document.getElementById('f_phone').value.trim();
+  const plan=document.getElementById('f_plan').value;
+  const goal=document.getElementById('f_goal').value;
+  const weight=document.getElementById('f_weight').value.trim();
+
+  if(!fullName||!phone||!plan||!goal){
+    alert('कृपया सभी ज़रूरी fields (*) भरें।');
+    return;
+  }
+  if(phone.replace(/\D/g,'').length<10){
+    alert('कृपया valid mobile number डालें।');
+    return;
+  }
+
+  const detail2 = `Goal: ${goal}` + (weight ? ` | Weight: ${weight}kg` : '');
+
+  const neoPayload = {
+    name: fullName,
+    mobile: phone,
+    email: '',
+    detail: plan,
+    detail2: detail2,
+    lead_source: 'bottom_form',
+    form_name: 'order_form'
+  };
+
+  const leadData = {name: fullName,phone,plan,goal,weight,source:'bottom', ts:new Date().toISOString()};
+  let leads = JSON.parse(localStorage.getItem('prakriti_leads') || '[]');
+  leads.push(leadData);
+  localStorage.setItem('prakriti_leads', JSON.stringify(leads));
+
+  const success = await sendToNeoDove(neoPayload);
+  if(success){
+    console.log('NeoDove lead submitted', neoPayload);
+  } else {
+    console.warn('NeoDove submit failed, saved locally', neoPayload);
+  }
+
+  document.getElementById('form-body').style.display='none';
+  const sb=document.getElementById('success-box');
+  sb.style.display='block';
+  sb.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+// FAQ
+function toggleFaq(el){
+  const item=el.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// Scroll animations
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}
+  });
+},{threshold:0.1});
+document.querySelectorAll('.ben-card,.testi-card,.step-card,.prob-card,.plan-card').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(28px)';
+  el.style.transition='opacity 0.5s ease,transform 0.5s ease';
+  io.observe(el);
+});
+</script>
+</body>
+</html>
