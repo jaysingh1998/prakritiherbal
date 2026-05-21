@@ -63,34 +63,37 @@
     position: fixed; top: 0; width: 100%; z-index: 999;
     background: rgba(15,45,15,0.98);
     backdrop-filter: blur(12px);
-    padding: 14px 36px;
+    padding: 12px 28px;
     display: flex; align-items: center; justify-content: space-between;
-    gap: 20px;
+    gap: 16px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.4);
   }
   .nav-logo {
-    display: flex; align-items: center; gap: 12px;
-    padding: 8px 12px;
+    display: flex; align-items: center; gap: 6px;
+    padding: 4px 6px;
     background: rgba(255,255,255,0.92);
     border: 1.5px solid rgba(224,168,32,0.4);
-    border-radius: 28px;
+    border-radius: 20px;
     flex-shrink: 0;
+    cursor: pointer;
+    transition: transform .2s;
   }
+  .nav-logo:hover { transform: scale(1.02); }
   .nav-logo img {
-    height: 50px; width: auto; border-radius: 12px;
-    padding: 6px; background: rgba(240,240,240,0.8);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    height: 24px; width: auto; border-radius: 6px;
+    padding: 2px; background: rgba(240,240,240,0.8);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     border: 1px solid rgba(46,139,46,0.12);
   }
   .nav-logo-text {
-    color: var(--green-dark); font-size: 1.1rem; font-weight: 900;
-    letter-spacing: 0.5px; white-space: nowrap; font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--green-dark); font-size: 0.75rem; font-weight: 800;
+    letter-spacing: 0.3px; white-space: nowrap; font-size: clamp(0.55rem, 1vw, 0.65rem);
   }
   .nav-btn {
     background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: #fff; border: none; padding: 10px 24px;
+    color: #fff; border: none; padding: 8px 16px;
     border-radius: 40px; font-family: 'Baloo 2', sans-serif;
-    font-weight: 800; font-size: 0.92rem; cursor: pointer;
+    font-weight: 800; font-size: 0.85rem; cursor: pointer;
     box-shadow: 0 4px 18px rgba(184,134,11,0.4);
     transition: transform .2s, box-shadow .2s;
     text-decoration: none; display: inline-block;
@@ -99,11 +102,14 @@
 
   /* ─── HERO ─── */
   .hero {
-    min-height: 100vh;
-    background: linear-gradient(150deg, #061806 0%, #0f3320 45%, #0a2828 100%);
+    min-height: calc(100vh - 80px);
+    background:
+      radial-gradient(circle at top left, rgba(46,139,46,0.22), transparent 18%),
+      radial-gradient(circle at bottom right, rgba(255,204,102,0.12), transparent 20%),
+      linear-gradient(150deg, #061806 0%, #0f3320 45%, #0a2828 100%);
     display: grid; grid-template-columns: minmax(320px, 1.4fr) minmax(280px, 0.85fr);
     align-items: center; gap: 40px;
-    padding: 110px 40px 80px;
+    padding: 120px 40px 60px;
     position: relative; overflow: hidden;
     max-width: 100%;
   }
@@ -115,12 +121,13 @@
     justify-content: center;
   }
   .hero-form-wrapper {
-    margin-top: 24px; background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.12); border-radius: 20px;
+    margin-top: 24px; background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18); border-radius: 24px;
     padding: 26px 24px 24px;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
     max-width: 520px;
     width: 100%;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.16);
   }
   .hero-form-title { font-size: 0.95rem; font-weight: 800; color: var(--gold-light); margin-bottom: 16px; }
   .hero-form-fld { margin-bottom: 12px; }
@@ -172,20 +179,39 @@
     font-size: 1.05rem; line-height: 1.75;
     margin-bottom: 30px; max-width: 680px;
   }
-  .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 34px; }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
   .chip {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
     color: #fff; padding: 7px 16px; border-radius: 30px;
     font-size: 0.85rem; font-weight: 600;
   }
   .chip::before { content: '✓ '; color: #5ddb5d; }
+  .hero-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 34px;
+  }
+  .hero-highlight {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 20px;
+    padding: 14px 16px;
+    color: #fff;
+  }
+  .hero-highlight strong {
+    display: block; font-size: 0.95rem; font-weight: 800; margin-bottom: 6px;
+  }
+  .hero-highlight span {
+    display: block; color: rgba(255,255,255,0.78); font-size: 0.88rem; line-height: 1.4;
+  }
   .hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
   .btn-gold {
     background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: #fff; border: none; padding: 16px 36px; border-radius: 50px;
+    color: #fff; border: none; padding: 12px 28px; border-radius: 50px;
     font-family: 'Baloo 2', sans-serif; font-weight: 900;
-    font-size: 1.05rem; cursor: pointer;
+    font-size: 0.95rem; cursor: pointer;
     box-shadow: 0 8px 28px rgba(184,134,11,0.45);
     transition: transform .2s, box-shadow .2s;
     text-decoration: none; display: inline-block;
@@ -194,40 +220,41 @@
   .btn-outline {
     background: transparent; color: #fff;
     border: 2px solid rgba(255,255,255,0.35);
-    padding: 14px 28px; border-radius: 50px;
+    padding: 10px 22px; border-radius: 50px;
     font-family: 'Baloo 2', sans-serif; font-weight: 700;
-    font-size: 0.95rem; cursor: pointer;
+    font-size: 0.88rem; cursor: pointer;
     transition: border-color .2s, background .2s;
     text-decoration: none; display: inline-block;
   }
   .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.07); }
 
-  .hero-right { position: relative; display: flex; justify-content: flex-end; align-items: center; overflow: hidden; }
+  .hero-right { position: relative; display: flex; justify-content: center; align-items: center; overflow: hidden; }
   .hero-right::before {
     content: '';
     position: absolute;
     left: -10%;
     top: 18%;
-    width: 260px;
-    height: 260px;
+    width: 280px;
+    height: 280px;
     background: radial-gradient(circle, rgba(224,168,32,0.18), transparent 65%);
     filter: blur(24px);
     pointer-events: none;
   }
   .hero-image-card {
-    background: rgba(255,255,255,0.08); border-radius: 32px;
-    padding: 26px; box-shadow: 0 30px 70px rgba(0,0,0,0.14);
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.09); border-radius: 34px;
+    padding: 28px; box-shadow: 0 40px 90px rgba(0,0,0,0.18);
     border: 1px solid rgba(255,255,255,0.18);
-    max-width: 440px; width: 100%; position: relative; overflow: hidden;
-    min-height: 420px;
+    max-width: 580px; width: 100%; position: relative; overflow: hidden;
+    min-height: 520px;
   }
-  .hero-image-stack { position: relative; display: grid; place-items: center; width: 100%; max-width: 100%; }
+  .hero-image-stack { position: relative; display: grid; place-items: center; width: 100%; max-width: 100%; padding-top: 12px; }
   .hero-image-stack img {
-    width: 100%; max-width: 400px; height: auto; object-fit: contain;
+    width: 90%; max-width: 460px; height: auto; object-fit: contain;
     animation: floatImg 3.5s ease-in-out infinite;
   }
   .hero-image-secondary {
-    position: absolute; right: 10px; bottom: -8px;
+    position: absolute; right: 14px; bottom: -10px;
     width: 260px; transform: rotate(6deg);
     box-shadow: 0 22px 50px rgba(0,0,0,0.14);
   }
@@ -554,30 +581,87 @@
   footer p { margin-top: 6px; line-height: 1.7; }
   footer a { color: var(--gold-light); text-decoration: none; }
 
+  /* ─── URGENCY BANNER ─── */
+  .hero-urgency {
+    background: linear-gradient(135deg, rgba(6,24,6,0.98), rgba(15,58,26,0.98) 55%, rgba(8,36,42,0.98));
+    border-top: 1px solid rgba(224,168,32,0.42);
+    border-bottom: 1px solid rgba(224,168,32,0.42);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 10px 24px rgba(6,24,6,0.18);
+    padding: 14px 40px;
+    display: flex; align-items: center; justify-content: center; gap: 18px;
+    flex-wrap: wrap; text-align: center;
+  }
+  .hero-urgency .urgency-item {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    color: rgba(255,255,255,0.92);
+  }
+  .hero-urgency .urgency-item strong {
+    font-size: 1rem; font-weight: 900; color: #ffe08a;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.22);
+  }
+  .hero-urgency .urgency-item span { font-size: 0.9rem; color: rgba(255,255,255,0.82); }
+  .hero-urgency .countdown {
+    display: inline-flex; align-items: center; justify-content: center;
+    margin: 0; padding: 4px 12px; border-radius: 999px;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(224,168,32,0.28);
+    color: #fff; font-family: 'Courier New', monospace; font-weight: 800;
+    letter-spacing: 0.4px;
+  }
+  .hero-urgency .stock-counter {
+    background: rgba(224,168,32,0.16);
+    border: 1px solid rgba(224,168,32,0.35);
+    padding: 4px 12px; border-radius: 999px;
+  }
+
+  /* ─── TRUST BADGES ─── */
+  .trust-badges {
+    display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+    margin-top: 24px; padding: 20px; background: rgba(255,255,255,0.05);
+    border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);
+  }
+  .badge { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .badge-icon { font-size: 2rem; }
+  .badge-text { font-size: 0.85rem; color: rgba(255,255,255,0.85); font-weight: 600; text-align: center; max-width: 80px; line-height: 1.3; }
+
+  /* ─── WHATSAPP CTA ─── */
+  .whatsapp-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, #25d366, #20c851);
+    color: #fff; padding: 12px 24px; border-radius: 50px;
+    font-family: 'Baloo 2', sans-serif; font-weight: 800;
+    font-size: 0.9rem; text-decoration: none; cursor: pointer;
+    box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+    transition: transform .2s, box-shadow .2s;
+    border: none;
+  }
+  .whatsapp-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(37,211,102,0.5); }
+  .whatsapp-cta img { width: 18px; height: 18px; }
+
+  /* ─── VIDEO TESTIMONIAL ─── */
   /* ─── STICKY BTN ─── */
   .sticky-float {
-    position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%);
+    position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
     z-index: 997; display: none;
   }
   .sticky-float a {
-    display: flex; align-items: center; gap: 8px;
+    display: flex; align-items: center; gap: 6px;
     background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: #fff; padding: 14px 32px; border-radius: 50px;
-    font-weight: 900; font-size: 0.98rem; text-decoration: none;
-    box-shadow: 0 10px 38px rgba(184,134,11,0.5);
+    color: #fff; padding: 10px 24px; border-radius: 50px;
+    font-weight: 800; font-size: 0.85rem; text-decoration: none;
+    box-shadow: 0 8px 28px rgba(184,134,11,0.45);
     white-space: nowrap; transition: transform .2s, box-shadow .2s;
   }
-  .sticky-float a:hover { transform: translateY(-3px); box-shadow: 0 14px 48px rgba(184,134,11,0.6); }
+  .sticky-float a:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(184,134,11,0.55); }
   .scroll-top {
-    position: fixed; right: 22px; bottom: 100px;
-    z-index: 998; width: 52px; height: 52px;
-    border-radius: 18px; background: rgba(255,255,255,0.95);
+    position: fixed; right: 22px; bottom: 80px;
+    z-index: 998; width: 44px; height: 44px;
+    border-radius: 16px; background: rgba(255,255,255,0.95);
     color: var(--green-dark); display: none; place-items: center;
-    box-shadow: 0 18px 36px rgba(0,0,0,0.18); cursor: pointer;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.15); cursor: pointer;
     transition: transform .2s, background .2s;
   }
   .scroll-top:hover { transform: translateY(-3px); background: #fff; }
-  .scroll-top span { font-size: 1.6rem; }
+  .scroll-top span { font-size: 1.4rem; }
   .whatsapp-float {
     position: fixed; right: 22px; bottom: 22px;
     z-index: 998; display: flex; align-items: center; gap: 10px;
@@ -594,16 +678,24 @@
   @media(max-width: 900px){
     .hero { grid-template-columns: 1fr; padding: 100px 22px 60px; text-align: center; }
     .hero-left, .hero-right { width: 100%; }
+    .hero-left { align-items: center; }
     .hero-image-card { max-width: 100%; padding: 22px; margin: 0 auto; }
-    .hero-image-stack img { max-width: 320px; }
+    .hero-image-stack img { width: 100%; max-width: 420px; }
     .hero-image-secondary { width: 220px; right: 6px; bottom: -12px; }
+    .hero-highlights { grid-template-columns: 1fr 1fr; }
     .hero-chips, .hero-cta-row { justify-content: center; }
+    .hero-cta-row { gap: 12px; flex-wrap: wrap; }
+    .btn-gold, .btn-outline { padding: 11px 22px; font-size: 0.9rem; }
+    .sticky-float { bottom: 90px; }
+    .scroll-top { bottom: 90px; width: 42px; height: 42px; }
+    .whatsapp-float { bottom: 16px; }
     .hero-form-wrapper { max-width: 100%; width: 100%; }
     .solution-inner { grid-template-columns: 1fr; }
     section, .pricing, .lead-section { padding: 60px 20px; }
     .trust-strip { gap: 24px; padding: 18px 20px; }
     .form-2col { grid-template-columns: 1fr; }
     .urgency-banner { padding: 40px 20px; }
+    .hero-urgency { padding: 14px 20px; gap: 12px; }
     .sticky-float { display: block; }
     nav { padding: 10px 18px; }
     .form-wrap { padding: 28px 18px; }
@@ -620,17 +712,48 @@
   }
 
   @media(max-width: 600px){
-    nav { flex-wrap: wrap; justify-content: center; gap: 10px; padding: 10px 14px; }
-    .nav-logo-text { font-size: 1rem; }
-    .hero { padding: 90px 14px 48px; }
-    .hero-left { align-items: center; }
-    .hero h1 { font-size: clamp(2rem, 7vw, 2.6rem); }
-    .hero-desc { max-width: 100%; margin: 0 auto 22px; font-size: 1rem; }
-    .hero-form-wrapper { margin: 18px auto 0; }
-    .hero-form-fld input, .hero-form-fld select { font-size: 0.95rem; }
-    .hero-image-card { padding: 18px; }
-    .hero-image-stack img { max-width: 260px; }
-    .hero-image-secondary { display: block; width: 180px; right: -8px; bottom: -8px; transform: rotate(4deg); }
+    nav { flex-wrap: nowrap; justify-content: space-between; gap: 10px; padding: 10px 14px; }
+    .nav-logo { padding: 3px 5px; gap: 4px; }
+    .nav-logo-text { font-size: 0.55rem; }
+    .nav-logo img { height: 22px; }
+    .nav-btn { padding: 6px 12px; font-size: 0.8rem; white-space: nowrap; }
+    .hero { padding: 90px 14px 48px; text-align: center; }
+    .hero-left { align-items: center; justify-content: center; }
+    .hero h1 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
+    .hero-desc { max-width: 100%; margin: 0 auto 18px; font-size: 0.95rem; }
+    .hero-eyebrow { margin-bottom: 16px; }
+    .hero-form-wrapper { margin: 16px auto 0; padding: 20px 18px 18px; }
+    .hero-form-title { font-size: 0.9rem; margin-bottom: 12px; }
+    .hero-form-fld { margin-bottom: 10px; }
+    .hero-form-fld label { font-size: 0.75rem; }
+    .hero-form-fld input, .hero-form-fld select { font-size: 0.9rem; padding: 9px 12px; }
+    .hero-form-btn { padding: 11px; font-size: 0.9rem; margin-top: 6px; }
+    .hero-form-note { font-size: 0.68rem; margin-top: 8px; }
+    .whatsapp-cta { display: flex; width: 100%; justify-content: center; padding: 10px 16px; font-size: 0.8rem; margin-top: 8px; }
+    .urgency-banner { flex-direction: column; gap: 12px; padding: 12px 14px; font-size: 0.8rem; }
+    .hero-urgency { flex-direction: column; gap: 8px; padding: 12px 14px; font-size: 0.8rem; }
+    .urgency-item { gap: 6px; }
+    .urgency-item strong { font-size: 0.95rem; }
+    .urgency-item span { font-size: 0.75rem; }
+    .countdown { font-size: 0.9rem; }
+    .hero-urgency .urgency-item { width: 100%; }
+    .hero-urgency .urgency-item strong { font-size: 0.92rem; }
+    .hero-urgency .urgency-item span { font-size: 0.78rem; }
+    .trust-badges { gap: 10px; padding: 12px; }
+    .badge { gap: 4px; }
+    .badge-icon { font-size: 1.4rem; }
+    .badge-text { font-size: 0.7rem; max-width: 60px; }
+    .hero-chips { justify-content: center; gap: 6px; margin-bottom: 14px; }
+    .chip { padding: 5px 12px; font-size: 0.8rem; }
+    .hero-highlights { grid-template-columns: 1fr; gap: 10px; margin-bottom: 16px; }
+    .hero-highlight { padding: 10px 12px; }
+    .hero-highlight strong { font-size: 0.9rem; margin-bottom: 4px; }
+    .hero-highlight span { font-size: 0.8rem; }
+    .hero-cta-row { flex-direction: column; gap: 10px; justify-content: center; }
+    .btn-gold, .btn-outline { width: auto; padding: 10px 20px; font-size: 0.85rem; }
+    .hero-image-card { padding: 16px; margin-top: 16px; min-height: 420px; }
+    .hero-image-stack img { width: 100%; max-width: 100%; }
+    .hero-image-secondary { display: block; width: 160px; right: -6px; bottom: -6px; transform: rotate(4deg); }
     .product-showcase { grid-template-columns: 1fr; }
     .product-img-box { padding: 24px 16px; min-height: auto; }
     .trust-strip { flex-direction: column; align-items: stretch; padding: 18px 16px; }
@@ -642,13 +765,18 @@
     .form-wrap { padding: 20px 14px; }
     .faq-list { margin: 22px 0 0; padding: 0 4px; }
     .hero-cta-row { flex-direction: column; }
+    .hero-highlights { grid-template-columns: 1fr; }
     .btn-gold, .btn-outline { width: 100%; justify-content: center; }
-    .sticky-float { left: auto; right: 16px; transform: none; }
-    .nav-logo { padding: 8px 10px; gap: 10px; }
-    .nav-logo img { height: 44px; }
-    .nav-logo-text { font-size: 0.95rem; }
-    .whatsapp-float { right: 16px; bottom: 16px; font-size: 0.92rem; padding: 12px 16px; }
-    .scroll-top { right: 16px; bottom: 104px; }
+    .sticky-float { position: fixed; bottom: 120px; left: 50%; transform: translateX(-50%); right: auto; }
+    .sticky-float a { padding: 9px 20px; font-size: 0.8rem; }
+    .nav-logo { padding: 3px 5px; gap: 4px; }
+    .nav-logo img { height: 22px; }
+    .nav-logo-text { font-size: 0.55rem; }
+    .whatsapp-float { right: 16px; bottom: 16px; font-size: 0.8rem; padding: 10px 12px; width: fit-content; }
+    .scroll-top { right: 16px; bottom: 72px; width: 38px; height: 38px; }
+    .scroll-top span { font-size: 1rem; }
+    .scroll-top span { font-size: 1.2rem; }
+    .sticky-float a { padding: 8px 18px; font-size: 0.8rem; gap: 5px; }
     .hero-image-card, .solution-img, .form-wrap, .product-img-box, .plan-card { width: 100%; }
     .plan-tab { font-size: 0.85rem; padding: 10px 18px; }
   }
@@ -658,7 +786,7 @@
 
 <!-- NAVBAR -->
 <nav>
-  <div class="nav-logo">
+  <div class="nav-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
     <img src="prakriti_logo.png" alt="Prakriti Herbal" style="height: 48px; width: auto;">
     <span class="nav-logo-text">🌿 Prakriti Herbal</span>
   </div>
@@ -676,26 +804,16 @@
     <p class="hero-desc">
       आयुर्वेदिक दवा जो fat burn करती है, metabolism तेज़ करती है और पाचन सुधारती है — बिना किसी side effect के।
     </p>
-    <div class="hero-chips">
-      <span class="chip">वज़न घटाएं</span>
-      <span class="chip">पाचन सुधारें</span>
-      <span class="chip">100% नेचुरल</span>
-    </div>
-    
-    <!-- QUICK FORM -->
     <div class="hero-form-wrapper" id="quick-form">
       <div class="hero-form-title">⚡ अभी Free Consultation लें</div>
-      
       <div class="hero-form-fld">
         <label>नाम *</label>
         <input type="text" id="qf_name" placeholder="आपका नाम">
       </div>
-      
       <div class="hero-form-fld">
         <label>मोबाइल नंबर *</label>
         <input type="tel" id="qf_phone" placeholder="+91 98765 43210">
       </div>
-      
       <div class="hero-form-fld">
         <label>कितने महीने का कोर्स चाहते हैं? *</label>
         <select id="qf_plan">
@@ -707,15 +825,45 @@
           <option value="Expert से बात करूंगा">Expert से बात करूंगा</option>
         </select>
       </div>
-      
       <button class="hero-form-btn" onclick="submitQuickForm()">
         🎁 मुझे कॉल करें →
       </button>
       <p class="hero-form-note">सिर्फ 2 मिनट लगेंगे</p>
+      
+      <a class="whatsapp-cta" href="https://wa.me/918357899581?text=नमस्ते%20Prakriti%20Herbal%20से%20मैं%20Slim%20Fit%20Pro%20के%20बारे%20में%20जानना%20चाहता%20हूँ।%20कृपया%20मेरी%20मदद%20करें।" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 16px; height: 16px;">
+        💬 WhatsApp पर चैट करें
+      </a>
     </div>
 
-    <div style="margin-top: 24px;">
-      <a href="#pricing" class="btn-outline">सभी प्लान देखें ↓</a>
+    <div class="hero-chips">
+      <span class="chip">वज़न घटाएं</span>
+      <span class="chip">पाचन सुधारें</span>
+      <span class="chip">100% नेचुरल</span>
+    </div>
+
+    <div class="hero-highlights">
+      <div class="hero-highlight">
+        <strong>30 दिन में सुधार</strong>
+        <span>बेहतर पाचन और ऊर्जा के साथ वजन कम करें।</span>
+      </div>
+      <div class="hero-highlight">
+        <strong>ऑनलाइन एक्सपर्ट सपोर्ट</strong>
+        <span>Free consultation और WhatsApp पर मदद।</span>
+      </div>
+      <div class="hero-highlight">
+        <strong>100% आयुर्वेदिक</strong>
+        <span>किसी केमिकल या साइड इफ़ेक्ट के बिना असर।</span>
+      </div>
+      <div class="hero-highlight">
+        <strong>Doorstep delivery</strong>
+        <span>तेजी से पहुँचाने वाला प्लान सीधे घर तक।</span>
+      </div>
+    </div>
+
+    <div class="hero-cta-row">
+      <a class="btn-gold" href="#quick-form">🎁 मुफ्त सलाह पाएं</a>
+      <a class="btn-outline" href="#pricing">सभी प्लान देखें ↓</a>
     </div>
   </div>
   
@@ -729,6 +877,20 @@
     </div>
   </div>
 </section>
+
+<!-- URGENCY BANNER -->
+<div class="hero-urgency">
+  <div class="urgency-item">
+    <strong>⏱️ सीमित समय का ऑफर:</strong>
+    <span class="countdown">
+      <span id="timer">00:00:00</span>
+    </span>
+  </div>
+  <div class="urgency-item">
+    <strong class="stock-counter">📦 सिर्फ <span id="stock-count">18</span> यूनिट बचे हैं!</strong>
+    <span>इस कीमत पर</span>
+  </div>
+</div>
 
 <!-- TRUST STRIP -->
 <div class="trust-strip">
@@ -754,7 +916,31 @@
   </div>
 </div>
 
-<!-- PROBLEMS -->
+<!-- TRUST BADGES -->
+<div class="trust-strip" style="background: rgba(15,45,15,0.95); padding: 20px 40px; gap: 16px; border-top: none;">
+  <div class="trust-badges">
+    <div class="badge">
+      <div class="badge-icon">✓</div>
+      <div class="badge-text">FSSAI प्रमाणित</div>
+    </div>
+    <div class="badge">
+      <div class="badge-icon">🌿</div>
+      <div class="badge-text">100% आयुर्वेदिक</div>
+    </div>
+    <div class="badge">
+      <div class="badge-icon">⭐</div>
+      <div class="badge-text">4.9/5 स्टार रेटिंग</div>
+    </div>
+    <div class="badge">
+      <div class="badge-icon">🔒</div>
+      <div class="badge-text">डेटा सुरक्षित</div>
+    </div>
+    <div class="badge">
+      <div class="badge-icon">🚚</div>
+      <div class="badge-text">24/48 घंटा डिलीवरी</div>
+    </div>
+  </div>
+</div>
 <section class="problems">
   <div class="center">
     <div class="sec-label">क्या आप इससे परेशान हैं?</div>
@@ -836,6 +1022,7 @@
       </div>
     </div>
   </div>
+
 </section>
 
 <!-- PRICING -->
@@ -1152,15 +1339,36 @@
 </a>
 
 <script>
-// Countdown
+// Countdown Timer + Stock Counter
 (function(){
-  let t = 9*3600+47*60+32;
-  setInterval(function(){
-    t--; if(t<0) t=24*3600;
-    document.getElementById('cdh').textContent=String(Math.floor(t/3600)).padStart(2,'0');
-    document.getElementById('cdm').textContent=String(Math.floor((t%3600)/60)).padStart(2,'0');
-    document.getElementById('cds').textContent=String(t%60).padStart(2,'0');
-  },1000);
+  // Countdown Timer - 24 hours
+  function startCountdown(){
+    let t = 24 * 3600; // 24 hours in seconds
+    const updateTimer = () => {
+      const hours = String(Math.floor(t / 3600)).padStart(2, '0');
+      const mins = String(Math.floor((t % 3600) / 60)).padStart(2, '0');
+      const secs = String(t % 60).padStart(2, '0');
+      const timerEl = document.getElementById('timer');
+      if(timerEl) timerEl.textContent = `${hours}:${mins}:${secs}`;
+      t--;
+      if(t < 0) t = 24 * 3600; // Reset after 24 hours
+    };
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  }
+  
+  // Stock Counter - Decreases as time passes
+  function startStockCounter(){
+    let stock = 18;
+    setInterval(() => {
+      if(Math.random() > 0.95 && stock > 8) stock--; // Random decrease
+      const stockEl = document.getElementById('stock-count');
+      if(stockEl) stockEl.textContent = stock;
+    }, 5000); // Check every 5 seconds
+  }
+  
+  startCountdown();
+  startStockCounter();
 })();
 
 // Sticky
