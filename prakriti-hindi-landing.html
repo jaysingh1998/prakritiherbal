@@ -7,17 +7,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Baloo+2:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --green-dark: #0f2d0f;
-    --green-mid: #1e5c1e;
-    --green-bright: #2e8b2e;
-    --teal: #0e6b5e;
-    --gold: #b8860b;
-    --gold-light: #e0a820;
-    --gold-pale: #fdf3d0;
-    --cream: #faf8f2;
-    --red: #c0392b;
-    --red-bright: #e74c3c;
+    --green-dark: #0f1e2e;
+    --green-mid: #1a3a52;
+    --green-bright: #d4a574;
+    --teal: #a08070;
+    --gold: #d4a574;
+    --gold-light: #e8c4a0;
+    --gold-pale: #f5f3f0;
+    --cream: #f5f3f0;
+    --red: #c85a54;
+    --red-bright: #d97070;
     --white: #fff;
+    --purple: #6b5b7d;
+    --blue: #4a6b8a;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; min-width: 0; }
@@ -33,7 +35,7 @@
   }
   body {
     font-family: 'Baloo 2', 'Tiro Devanagari Hindi', sans-serif;
-    background: var(--cream);
+    background: #f5f3f0;
     color: #1a1a1a;
     width: 100vw;
     max-width: 100vw;
@@ -61,7 +63,7 @@
   /* ─── NAVBAR ─── */
   nav {
     position: fixed; top: 0; width: 100%; z-index: 999;
-    background: rgba(15,45,15,0.98);
+    background: rgba(15,30,46,0.98);
     backdrop-filter: blur(12px);
     padding: 12px 28px;
     display: flex; align-items: center; justify-content: space-between;
@@ -86,7 +88,7 @@
     border: 1px solid rgba(46,139,46,0.12);
   }
   .nav-logo-text {
-    color: var(--green-dark); font-size: 0.75rem; font-weight: 800;
+    color: #0f1e2e; font-size: 0.75rem; font-weight: 800;
     letter-spacing: 0.3px; white-space: nowrap; font-size: clamp(0.55rem, 1vw, 0.65rem);
   }
   .nav-btn {
@@ -104,9 +106,9 @@
   .hero {
     min-height: calc(100vh - 80px);
     background:
-      radial-gradient(circle at top left, rgba(46,139,46,0.22), transparent 18%),
-      radial-gradient(circle at bottom right, rgba(255,204,102,0.12), transparent 20%),
-      linear-gradient(150deg, #061806 0%, #0f3320 45%, #0a2828 100%);
+      radial-gradient(circle at top left, rgba(212,165,116,0.15), transparent 18%),
+      radial-gradient(circle at bottom right, rgba(232,196,160,0.1), transparent 20%),
+      linear-gradient(150deg, #0f1e2e 0%, #1a3a52 45%, #0a1420 100%);
     display: grid; grid-template-columns: minmax(320px, 1.4fr) minmax(280px, 0.85fr);
     align-items: center; gap: 40px;
     padding: 120px 40px 60px;
@@ -129,7 +131,7 @@
     width: 100%;
     box-shadow: 0 24px 60px rgba(0,0,0,0.16);
   }
-  .hero-form-title { font-size: 0.95rem; font-weight: 800; color: var(--gold-light); margin-bottom: 16px; }
+  .hero-form-title { font-size: 0.95rem; font-weight: 800; color: #e8c4a0; margin-bottom: 16px; }
   .hero-form-fld { margin-bottom: 12px; }
   .hero-form-fld label { display: block; font-size: 0.8rem; color: rgba(255,255,255,0.65); font-weight: 700; margin-bottom: 5px; }
   .hero-form-fld input, .hero-form-fld select {
@@ -140,29 +142,29 @@
   }
   .hero-form-fld input::placeholder { color: rgba(255,255,255,0.25); }
   .hero-form-fld input:focus, .hero-form-fld select:focus {
-    border-color: var(--gold-light); background: rgba(255,255,255,0.12); outline: none;
+    border-color: #e8c4a0; background: rgba(255,255,255,0.12); outline: none;
   }
-  .hero-form-fld select option { background: #0f2d0f; color: #fff; }
+  .hero-form-fld select option { background: #0f1e2e; color: #fff; }
   .hero-form-btn {
-    width: 100%; background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    width: 100%; background: linear-gradient(135deg, #d4a574, #e8c4a0);
     color: #fff; border: none; padding: 13px; border-radius: 10px;
     font-weight: 800; font-size: 0.95rem; cursor: pointer; margin-top: 8px;
     transition: transform .2s, box-shadow .2s;
-    box-shadow: 0 6px 20px rgba(184,134,11,0.4);
+    box-shadow: 0 6px 20px rgba(212,165,116,0.4);
   }
-  .hero-form-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(184,134,11,0.5); }
+  .hero-form-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(212,165,116,0.5); }
   .hero-form-note { font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-top: 10px; text-align: center; }
   .hero::after {
     content: '';
     position: absolute; right: -100px; top: -100px;
     width: 600px; height: 600px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(46,139,46,0.12), transparent 65%);
+    background: radial-gradient(circle, rgba(212,165,116,0.1), transparent 65%);
     pointer-events: none;
   }
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(224,168,32,0.15); border: 1px solid rgba(224,168,32,0.4);
-    color: var(--gold-light); padding: 7px 20px; border-radius: 40px;
+    background: rgba(212,165,116,0.2); border: 1px solid rgba(212,165,116,0.5);
+    color: #e8c4a0; padding: 7px 20px; border-radius: 40px;
     font-size: 0.82rem; font-weight: 700; letter-spacing: 1.5px;
     text-transform: uppercase; margin-bottom: 22px;
   }
@@ -172,8 +174,8 @@
     color: #fff; line-height: 1.18; margin-bottom: 18px; font-weight: 900;
     max-width: 860px;
   }
-  .hero h1 .highlight { color: var(--gold-light); }
-  .hero h1 .red-text { color: #ff6b6b; }
+  .hero h1 .highlight { color: #e8c4a0; }
+  .hero h1 .red-text { color: #d97070; }
   .hero-desc {
     color: rgba(255,255,255,0.82);
     font-size: 1.05rem; line-height: 1.75;
@@ -186,7 +188,7 @@
     color: #fff; padding: 7px 16px; border-radius: 30px;
     font-size: 0.85rem; font-weight: 600;
   }
-  .chip::before { content: '✓ '; color: #5ddb5d; }
+  .chip::before { content: '✓ '; color: #d4a574; }
   .hero-highlights {
     display: grid;
     grid-template-columns: repeat(2, minmax(140px, 1fr));
@@ -208,15 +210,15 @@
   }
   .hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
   .btn-gold {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, #d4a574, #e8c4a0);
     color: #fff; border: none; padding: 12px 28px; border-radius: 50px;
     font-family: 'Baloo 2', sans-serif; font-weight: 900;
     font-size: 0.95rem; cursor: pointer;
-    box-shadow: 0 8px 28px rgba(184,134,11,0.45);
+    box-shadow: 0 8px 28px rgba(212,165,116,0.4);
     transition: transform .2s, box-shadow .2s;
     text-decoration: none; display: inline-block;
   }
-  .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 14px 38px rgba(184,134,11,0.55); }
+  .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 14px 38px rgba(212,165,116,0.5); }
   .btn-outline {
     background: transparent; color: #fff;
     border: 2px solid rgba(255,255,255,0.35);
@@ -236,7 +238,7 @@
     top: 18%;
     width: 280px;
     height: 280px;
-    background: radial-gradient(circle, rgba(224,168,32,0.18), transparent 65%);
+    background: radial-gradient(circle, rgba(212,165,116,0.15), transparent 65%);
     filter: blur(24px);
     pointer-events: none;
   }
@@ -265,50 +267,50 @@
     gap: 24px; margin: 40px 0; align-items: center;
   }
   .product-img-box {
-    background: rgba(46,139,46,0.08); border: 1px solid rgba(46,139,46,0.18);
+    background: rgba(212,165,116,0.08); border: 1px solid rgba(212,165,116,0.18);
     border-radius: 32px; padding: 40px; text-align: center;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     min-height: 380px; transition: transform .25s, box-shadow .25s;
     backdrop-filter: blur(10px);
   }
-  .product-img-box:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(46,139,46,0.12); }
+  .product-img-box:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(212,165,116,0.12); }
   .product-img-box img { width: auto; max-width: 360px; height: auto; object-fit: contain; }
-  .product-label { font-size: 1.1rem; color: var(--gold-light); font-weight: 900; margin-top: 20px; }
+  .product-label { font-size: 1.1rem; color: #d4a574; font-weight: 900; margin-top: 20px; }
   @keyframes floatImg { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
   .hero-glow {
     position: absolute; width: 280px; height: 280px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(46,139,46,0.22), transparent);
+    background: radial-gradient(circle, rgba(212,165,116,0.15), transparent);
     pointer-events: none;
   }
 
   /* ─── TRUST STRIP ─── */
   .trust-strip {
-    background: var(--green-dark);
+    background: #0f1e2e;
     padding: 32px 40px;
     display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
-    border-top: 2px solid rgba(224,168,32,0.18);
-    border-bottom: 2px solid rgba(224,168,32,0.18);
+    border-top: 2px solid rgba(212,165,116,0.18);
+    border-bottom: 2px solid rgba(212,165,116,0.18);
   }
   .trust-item { text-align: center; color: #fff; }
-  .trust-big { font-family: 'Baloo 2', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--gold-light); line-height: 1; }
+  .trust-big { font-family: 'Baloo 2', sans-serif; font-size: 2.2rem; font-weight: 900; color: #e8c4a0; line-height: 1; }
   .trust-small { font-size: 0.78rem; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 1.2px; margin-top: 5px; font-weight: 700; }
 
   /* ─── SHARED ─── */
   section { padding: 80px 60px; }
   .sec-label {
     display: inline-block;
-    background: rgba(14,107,94,0.1); border: 1px solid var(--teal);
-    color: var(--teal); padding: 5px 18px; border-radius: 30px;
+    background: rgba(212,165,116,0.1); border: 1px solid #a08070;
+    color: #a08070; padding: 5px 18px; border-radius: 30px;
     font-size: 0.77rem; font-weight: 700; letter-spacing: 2px;
     text-transform: uppercase; margin-bottom: 14px;
   }
   .sec-title {
     font-family: 'Baloo 2', sans-serif;
     font-size: clamp(1.9rem, 3vw, 2.8rem);
-    color: var(--green-dark); font-weight: 900;
+    color: #0f1e2e; font-weight: 900;
     line-height: 1.25; margin-bottom: 14px;
   }
-  .sec-title span { color: var(--teal); }
+  .sec-title span { color: #d4a574; }
   .sec-sub { color: #555; font-size: 1rem; line-height: 1.75; max-width: 560px; }
   .center { text-align: center; }
   .center .sec-sub { margin: 0 auto; }
@@ -317,13 +319,13 @@
   .problems { background: #fff; }
   .prob-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 44px; }
   .prob-card {
-    background: linear-gradient(135deg, #fff5f5, #fff0f0);
-    border: 1px solid rgba(192,57,43,0.12);
+    background: linear-gradient(135deg, #fef5f3, #fdf0ed);
+    border: 1px solid rgba(200,90,84,0.15);
     border-radius: 18px; padding: 28px 22px; text-align: center;
   }
   .prob-icon { font-size: 2.4rem; margin-bottom: 12px; display: block; }
-  .prob-card h3 { font-size: 1rem; color: var(--red); font-weight: 800; margin-bottom: 8px; }
-  .prob-card p { font-size: 0.87rem; color: #666; line-height: 1.6; }
+  .prob-card h3 { font-size: 1rem; color: #c85a54; font-weight: 800; margin-bottom: 8px; }
+  .prob-card p { font-size: 0.87rem; color: #333; line-height: 1.6; }
 
   /* ─── SOLUTION ─── */
   .solution {
@@ -350,18 +352,226 @@
   .ingr-row small { color: rgba(255,255,255,0.55); font-size: 0.8rem; }
 
   /* ─── BENEFITS ─── */
-  .benefits { background: var(--cream); }
+  .benefits { background: #f5f3f0; }
   .ben-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; margin-top: 44px; }
   .ben-card {
-    background: linear-gradient(135deg, #edfaed, #e0f5e0);
-    border: 1px solid rgba(30,92,30,0.15);
+    background: linear-gradient(135deg, #f9f4f0, #f5ede6);
+    border: 1px solid rgba(212,165,116,0.18);
     border-radius: 20px; padding: 30px 24px; text-align: center;
     transition: transform .25s, box-shadow .25s;
   }
-  .ben-card:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(30,92,30,0.14); }
-  .ben-icon { font-size: 2.8rem; margin-bottom: 14px; display: block; }
-  .ben-card h3 { font-size: 1.05rem; color: var(--green-dark); font-weight: 800; margin-bottom: 8px; }
-  .ben-card p { font-size: 0.88rem; color: #555; line-height: 1.65; }
+  .ben-card:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(212,165,116,0.12); }
+  .ben-card h3 { font-size: 1.05rem; color: #0f1e2e; font-weight: 800; margin-bottom: 8px; }
+  .ben-card p { font-size: 0.88rem; color: #333; line-height: 1.65; }
+
+  /* ─── INGREDIENTS DEEP DIVE ─── */
+  .ingredients-dive {
+    background: linear-gradient(135deg, #f5f3f0 0%, rgba(212,165,116,0.05) 100%);
+  }
+  .ingredients-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px; margin-top: 32px;
+  }
+  .ingredient-card {
+    background: #fff; border: 1.5px solid rgba(212,165,116,0.2);
+    border-radius: 16px; padding: 18px 14px; text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .ingredient-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: linear-gradient(90deg, #d4a574, #a08070);
+  }
+  .ingredient-card:hover {
+    transform: translateY(-4px); box-shadow: 0 12px 32px rgba(212,165,116,0.1);
+    border-color: #d4a574;
+  }
+  .ingredient-image {
+    width: 100%; height: 120px; background: linear-gradient(135deg, rgba(212,165,116,0.08), rgba(160,128,112,0.08));
+    border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    font-size: 2.2rem; margin-bottom: 10px;
+  }
+  .ingredient-name {
+    font-size: 0.95rem; font-weight: 700; color: #0f1e2e; margin-bottom: 4px;
+  }
+  .ingredient-benefit {
+    font-size: 0.8rem; color: #d4a574; font-weight: 600; margin-bottom: 6px; line-height: 1.4;
+  }
+  .ingredient-desc { font-size: 0.78rem; color: #444; line-height: 1.5; margin-bottom: 6px; }
+  .ingredient-source { font-size: 0.7rem; color: #999; font-style: normal; }
+
+  /* ─── RESULTS TIMELINE ─── */
+  .results-timeline {
+    background: linear-gradient(135deg, #fdf5f3 0%, #faf0ec 100%);
+  }
+  .timeline-container {
+    max-width: 900px; margin: 44px auto 0; position: relative;
+  }
+  .timeline-item {
+    display: grid; grid-template-columns: 120px 1fr; gap: 28px; margin-bottom: 36px;
+    align-items: flex-start; position: relative;
+  }
+  .timeline-item:not(:last-child)::after {
+    content: ''; position: absolute; left: 60px; top: 140px;
+    width: 2px; height: 60px; background: linear-gradient(to bottom, var(--red-bright), transparent);
+  }
+  .timeline-week {
+    display: flex; flex-direction: column; align-items: center;
+    background: linear-gradient(135deg, var(--red-bright), #ff8787);
+    color: #fff; padding: 16px 12px; border-radius: 16px;
+    font-weight: 900; font-size: 0.95rem; text-align: center;
+    box-shadow: 0 8px 24px rgba(230,126,34,0.25);
+  }
+  .timeline-week-num { font-size: 1.4rem; font-weight: 900; }
+  .timeline-week-label { font-size: 0.75rem; opacity: 0.9; }
+  .timeline-content {
+    background: #fff; border: 2px solid rgba(231,76,60,0.2);
+    border-radius: 16px; padding: 24px; position: relative;
+  }
+  .timeline-content::before {
+    content: ''; position: absolute; left: -12px; top: 20px;
+    width: 10px; height: 10px; background: var(--red-bright);
+    border-radius: 50%; border: 3px solid #fff;
+  }
+  .timeline-title {
+    font-size: 1.1rem; font-weight: 900; color: var(--red);
+    margin-bottom: 8px;
+  }
+  .timeline-desc { font-size: 0.93rem; color: #666; line-height: 1.7; }
+  .timeline-results {
+    margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(230,126,34,0.1);
+  }
+  .timeline-result { font-size: 0.87rem; color: var(--red-bright); margin-top: 6px; font-weight: 600; }
+
+  /* ─── COMPARISON CHART ─── */
+  .comparison-section {
+    background: linear-gradient(135deg, rgba(107,91,125,0.08), rgba(74,107,138,0.08));
+  }
+  .comparison-table {
+    max-width: 1000px; margin: 40px auto 0; overflow-x: auto;
+  }
+  .comp-table {
+    width: 100%; border-collapse: collapse; background: #fff;
+    border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  }
+  .comp-table th {
+    background: linear-gradient(135deg, #d4a574, #a08070);
+    color: #fff; padding: 18px 16px; text-align: left; font-weight: 800;
+    border: none; font-size: 0.95rem;
+  }
+  .comp-table td {
+    padding: 16px; border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-size: 0.9rem; color: #333;
+  }
+  .comp-table tbody tr:hover {
+    background: rgba(212,165,116,0.04);
+  }
+  .comp-table .feature-col { font-weight: 700; color: #0f1e2e; }
+  .comp-check { color: #d4a574; font-size: 1.2rem; font-weight: 900; }
+  .comp-cross { color: #bdc3c7; font-size: 1.2rem; }
+
+  /* ─── BMI CALCULATOR ─── */
+  .bmi-section {
+    background: linear-gradient(135deg, #fdf5f3, #faf0ec);
+  }
+  .bmi-container {
+    max-width: 600px; margin: 44px auto 0;
+  }
+  .bmi-input-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;
+  }
+  .bmi-input-group {
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .bmi-input-group label {
+    font-size: 0.85rem; font-weight: 700; color: #0f1e2e;
+  }
+  .bmi-input-group input {
+    padding: 10px 12px; border: 1.5px solid rgba(212,165,116,0.25);
+    border-radius: 10px; font-size: 0.95rem; font-family: 'Baloo 2', sans-serif;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .bmi-input-group input:focus {
+    outline: none; border-color: #d4a574;
+    background: rgba(212,165,116,0.04);
+  }
+  .bmi-buttons {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px;
+  }
+  .bmi-btn {
+    padding: 10px 12px; border: none; border-radius: 10px;
+    font-weight: 700; font-size: 0.9rem; cursor: pointer;
+    font-family: 'Baloo 2', sans-serif; transition: transform 0.2s;
+  }
+  .bmi-btn-calc {
+    background: linear-gradient(135deg, #d4a574, #a08070);
+    color: #fff; box-shadow: 0 6px 16px rgba(212,165,116,0.25);
+  }
+  .bmi-btn-calc:hover { transform: translateY(-2px); }
+  .bmi-btn-reset {
+    background: rgba(212,165,116,0.1); color: #0f1e2e;
+    border: 1.5px solid #d4a574;
+  }
+  .bmi-btn-reset:hover { background: rgba(212,165,116,0.15); }
+  #bmi-result { min-height: auto; padding: 0; }
+
+  /* ─── DOCTOR TESTIMONIALS ─── */
+  .doctor-testimonials {
+    background: linear-gradient(135deg, #f9f4f0, #f5ede6);
+  }
+  .doctor-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px; margin-top: 44px;
+  }
+  .doctor-card {
+    background: #fff; border: 2px solid rgba(212,165,116,0.15);
+    border-radius: 20px; padding: 32px; overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
+  .doctor-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 5px; background: linear-gradient(90deg, var(--green-bright), var(--teal), var(--blue));
+  }
+  .doctor-card:hover {
+    transform: translateY(-8px); box-shadow: 0 24px 60px rgba(46,139,46,0.15);
+  }
+  .doctor-header {
+    display: flex; gap: 16px; margin-bottom: 16px;
+  }
+  .doctor-avatar {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--green-bright), var(--teal));
+    color: #fff; font-size: 1.5rem; display: flex;
+    align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .doctor-info h3 {
+    font-size: 1rem; font-weight: 900; color: var(--green-dark); margin-bottom: 2px;
+  }
+  .doctor-cred {
+    font-size: 0.8rem; color: var(--teal); font-weight: 700; margin-bottom: 2px;
+  }
+  .doctor-exp {
+    font-size: 0.75rem; color: #999; font-weight: 600;
+  }
+  .doctor-video {
+    width: 100%; height: 220px; background: linear-gradient(135deg, rgba(46,139,46,0.1), rgba(14,107,94,0.1));
+    border-radius: 12px; margin: 16px 0; display: flex; align-items: center;
+    justify-content: center; font-size: 3rem; color: rgba(46,139,46,0.3);
+    cursor: pointer; transition: all 0.3s;
+  }
+  .doctor-video:hover {
+    background: linear-gradient(135deg, rgba(46,139,46,0.15), rgba(14,107,94,0.15));
+    color: var(--green-bright);
+  }
+  .doctor-quote {
+    font-size: 0.9rem; color: #666; line-height: 1.75;
+    font-style: italic; margin-bottom: 12px;
+  }
+  .doctor-rating {
+    display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--gold);
+    font-weight: 800;
+  }
 
   /* ─── PRICING ─── */
   .pricing {
@@ -435,22 +645,22 @@
   .plan-btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
 
   /* ─── HOW IT WORKS ─── */
-  .how { background: #fff; }
+  .how { background: #f5f3f0; }
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 28px; margin-top: 44px; }
   .step-card { text-align: center; padding: 28px 18px; }
   .step-num {
     width: 58px; height: 58px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--teal), var(--green-mid));
+    background: linear-gradient(135deg, #a08070, #d4a574);
     color: #fff; font-size: 1.4rem; font-weight: 900;
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto 18px;
-    box-shadow: 0 8px 22px rgba(14,107,94,0.35);
+    box-shadow: 0 8px 22px rgba(212,165,116,0.35);
   }
-  .step-card h3 { font-size: 1rem; font-weight: 800; color: var(--green-dark); margin-bottom: 8px; }
-  .step-card p { font-size: 0.87rem; color: #666; line-height: 1.65; }
+  .step-card h3 { font-size: 1rem; font-weight: 800; color: #0f1e2e; margin-bottom: 8px; }
+  .step-card p { font-size: 0.87rem; color: #333; line-height: 1.65; }
 
   /* ─── TESTIMONIALS ─── */
-  .testimonials { background: var(--cream); }
+  .testimonials { background: #f5f3f0; }
   .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px; margin-top: 44px; }
   .testi-card {
     background: #fff;
@@ -461,7 +671,7 @@
   }
   .testi-card:hover { transform: translateY(-5px); }
   .stars { color: #f5a623; font-size: 1.05rem; margin-bottom: 12px; }
-  .testi-card blockquote { font-size: 0.93rem; color: #444; line-height: 1.75; font-style: italic; margin-bottom: 18px; }
+  .testi-card blockquote { font-size: 0.93rem; color: #333; line-height: 1.75; font-style: italic; margin-bottom: 18px; }
   .testi-person { display: flex; align-items: center; gap: 12px; }
   .avatar {
     width: 44px; height: 44px; border-radius: 50%;
@@ -549,7 +759,7 @@
   .success-box p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; }
 
   /* ─── FAQ ─── */
-  .faq { background: #fff; }
+  .faq { background: #f5f3f0; }
   .faq-list { max-width: 720px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 14px; }
   .faq-item {
     border: 1px solid rgba(30,92,30,0.15);
@@ -645,18 +855,18 @@
   }
   .sticky-float a {
     display: flex; align-items: center; gap: 6px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, #d4a574, #e8c4a0);
     color: #fff; padding: 10px 24px; border-radius: 50px;
     font-weight: 800; font-size: 0.85rem; text-decoration: none;
-    box-shadow: 0 8px 28px rgba(184,134,11,0.45);
+    box-shadow: 0 8px 28px rgba(212,165,116,0.45);
     white-space: nowrap; transition: transform .2s, box-shadow .2s;
   }
-  .sticky-float a:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(184,134,11,0.55); }
+  .sticky-float a:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(212,165,116,0.55); }
   .scroll-top {
     position: fixed; right: 22px; bottom: 80px;
     z-index: 998; width: 44px; height: 44px;
     border-radius: 16px; background: rgba(255,255,255,0.95);
-    color: var(--green-dark); display: none; place-items: center;
+    color: #0f1e2e; display: none; place-items: center;
     box-shadow: 0 14px 32px rgba(0,0,0,0.15); cursor: pointer;
     transition: transform .2s, background .2s;
   }
@@ -709,6 +919,10 @@
     .hero-cta-row { flex-wrap: wrap; }
     .hero-form-fld input, .hero-form-fld select { font-size: 0.95rem; }
     .hero-image-card { padding: 18px; }
+    .ingredients-grid { grid-template-columns: repeat(2, 1fr); }
+    .doctor-grid { grid-template-columns: 1fr; }
+    .timeline-item { grid-template-columns: 100px 1fr; gap: 16px; }
+    .comparison-table { overflow-x: auto; }
   }
 
   @media(max-width: 600px){
@@ -779,6 +993,9 @@
     .sticky-float a { padding: 8px 18px; font-size: 0.8rem; gap: 5px; }
     .hero-image-card, .solution-img, .form-wrap, .product-img-box, .plan-card { width: 100%; }
     .plan-tab { font-size: 0.85rem; padding: 10px 18px; }
+    .bmi-container { max-width: 100%; }
+    .bmi-input-row { gap: 10px; }
+    .bmi-buttons { gap: 8px; }
   }
 </style>
 </head>
@@ -1021,6 +1238,418 @@
         <div class="product-label">Green Tea Booster</div>
       </div>
     </div>
+  </div>
+
+</section>
+
+<!-- INGREDIENTS DEEP DIVE -->
+<section class="ingredients-dive">
+  <div class="center">
+    <div class="sec-label">🌿 विस्तृत जानकारी</div>
+    <h2 class="sec-title">हर घटक को <span>समझें</span></h2>
+    <p class="sec-sub">Slim Fit Pro में 6 शक्तिशाली प्राकृतिक घटक हैं जो आपका वजन घटाने में मदद करते हैं। सभी आयुर्वेदिक, शुद्ध और रसायन-मुक्त।</p>
+  </div>
+  
+  <div class="ingredients-grid">
+    <div class="ingredient-card">
+      <div class="ingredient-image">🍃</div>
+      <div class="ingredient-name">Green Tea</div>
+      <div class="ingredient-benefit">Fat कम करता है, metabolism तेज़ करता है</div>
+      <p class="ingredient-desc">शक्तिशाली antioxidants से फैट जलाने में मदद मिलती है।</p>
+      <p class="ingredient-source">भारत से जैविक</p>
+    </div>
+
+    <div class="ingredient-card">
+      <div class="ingredient-image">🍋</div>
+      <div class="ingredient-name">Garcinia</div>
+      <div class="ingredient-benefit">भूख कम करता है, फैट रोकता है</div>
+      <p class="ingredient-desc">प्राकृतिक घटक जो बिना खाए भी तृप्ति देता है।</p>
+      <p class="ingredient-source">केरल, भारत से</p>
+    </div>
+
+    <div class="ingredient-card">
+      <div class="ingredient-image">🌿</div>
+      <div class="ingredient-name">Triphala</div>
+      <div class="ingredient-benefit">पाचन सुधारता है, शरीर साफ करता है</div>
+      <p class="ingredient-desc">3 फलों का आयुर्वेदिक मिश्रण जो कब्ज़ दूर करता है।</p>
+      <p class="ingredient-source">हिमालय से शुद्ध</p>
+    </div>
+
+    <div class="ingredient-card">
+      <div class="ingredient-image">🌶️</div>
+      <div class="ingredient-name">Ginger & Pepper</div>
+      <div class="ingredient-benefit">पाचन तेज़ करता है, कैलोरी जलाता है</div>
+      <p class="ingredient-desc">प्राचीन मसाले जो शरीर की गर्मी बढ़ाते हैं।</p>
+      <p class="ingredient-source">केरल से जैविक</p>
+    </div>
+
+    <div class="ingredient-card">
+      <div class="ingredient-image">🌾</div>
+      <div class="ingredient-name">Guggul</div>
+      <div class="ingredient-benefit">थायराइड संतुलन करता है, वज़न नियंत्रित करता है</div>
+      <p class="ingredient-desc">आयुर्वेदिक घटक जो हार्मोन सही रखता है।</p>
+      <p class="ingredient-source">राजस्थान से प्राकृतिक</p>
+    </div>
+
+    <div class="ingredient-card">
+      <div class="ingredient-image">⭐</div>
+      <div class="ingredient-name">Cumin & Fennel</div>
+      <div class="ingredient-benefit">पेट की गैस दूर करता है, पाचन सुधारता है</div>
+      <p class="ingredient-desc">भारतीय मसाले जो bloating कम करते हैं।</p>
+      <p class="ingredient-source">राजस्थान से रसायन-मुक्त</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; padding: 16px; background: rgba(212,165,116,0.08); border-radius: 14px; text-align: center; border: 1px solid rgba(212,165,116,0.2);">
+    <h3 style="font-size: 0.95rem; font-weight: 700; color: #0f1e2e; margin-bottom: 8px;">✓ हमारी गुणवत्ता की गारंटी</h3>
+    <p style="font-size: 0.8rem; color: #555; line-height: 1.6;">
+      🌱 100% शुद्ध | 🏭 GMP प्रमाणित | 🔬 Lab जांचा हुआ | 🌍 प्राकृतिक | ✓ FSSAI मंजूर
+    </p>
+  </div>
+
+</section>
+
+<!-- RESULTS TIMELINE -->
+<section class="results-timeline">
+  <div class="center">
+    <div class="sec-label">📊 परिणाम का समय क्रम</div>
+    <h2 class="sec-title">क्या होता है हर <span>हफ्ते में</span>?</h2>
+    <p class="sec-sub">अलग-अलग लोगों में अलग गति से परिणाम आते हैं, लेकिन यह average timeline है जो 80% customers को follow करते हैं।</p>
+  </div>
+
+  <div class="timeline-container">
+    <!-- Week 1 -->
+    <div class="timeline-item">
+      <div class="timeline-week">
+        <div class="timeline-week-num">1</div>
+        <div class="timeline-week-label">हफ्ता</div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-title">⚡ शुरुआती बदलाव शुरू</div>
+        <p class="timeline-desc">
+          पहले सप्ताह में आपको digestive improvement और light feeling महसूस होगी। 
+          Bloating कम होगी और energy level थोड़ा बढ़ेगा।
+        </p>
+        <div class="timeline-results">
+          <div class="timeline-result">✓ Bloating में 30% सुधार</div>
+          <div class="timeline-result">✓ Energy में मामूली वृद्धि</div>
+          <div class="timeline-result">✓ Cravings में कमी शुरू</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 4 -->
+    <div class="timeline-item">
+      <div class="timeline-week">
+        <div class="timeline-week-num">4</div>
+        <div class="timeline-week-label">हफ्ते</div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-title">🔥 Fat Loss शुरू होता है</div>
+        <p class="timeline-desc">
+          चौथे सप्ताह तक आप पहला महत्वपूर्ण बदलाव देखेंगे। पेट की चर्बी कम दिखना शुरू हो जाएगी, 
+          कपड़े थोड़े ढीले हो जाएंगे।
+        </p>
+        <div class="timeline-results">
+          <div class="timeline-result">⚖️ 2-4 kg वज़न में कमी (औसतन)</div>
+          <div class="timeline-result">📏 कमर में 1-2 इंच की कमी</div>
+          <div class="timeline-result">💪 Energy और stamina में सुधार</div>
+          <div class="timeline-result">😊 Confidence में बढ़ोतरी</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 8 -->
+    <div class="timeline-item">
+      <div class="timeline-week">
+        <div class="timeline-week-num">8</div>
+        <div class="timeline-week-label">हफ्ते</div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-title">🎯 Significant Results दिखना शुरू</div>
+        <p class="timeline-desc">
+          दो महीने बाद अधिकतर लोगों को dramatic transformation दिख जाता है। 
+          दोस्त और परिवार भी अंतर को notice करने लगते हैं।
+        </p>
+        <div class="timeline-results">
+          <div class="timeline-result">⚖️ 5-8 kg वज़न में कमी (औसतन)</div>
+          <div class="timeline-result">📏 कमर में 2-4 इंच की कमी</div>
+          <div class="timeline-result">🧘 पाचन बिल्कुल सामान्य हो जाता है</div>
+          <div class="timeline-result">⭐ लोग आपके बदलाव पर comment करने लगते हैं</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 12 -->
+    <div class="timeline-item">
+      <div class="timeline-week">
+        <div class="timeline-week-num">12</div>
+        <div class="timeline-week-label">हफ्ते</div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-title">🌟 Full Transformation Complete</div>
+        <p class="timeline-desc">
+          तीन महीने का कोर्स पूरा होने तक complete transformation हो जाता है। 
+          आप अपने ideal weight के करीब पहुँच जाते हैं। यह आपके Slim Fit Pro journey का सबसे satisfying phase है।
+        </p>
+        <div class="timeline-results">
+          <div class="timeline-result">⚖️ 8-15 kg तक वज़न में कमी (से ज़्यादा भी संभव है)</div>
+          <div class="timeline-result">📏 कमर में 4-7 इंच की कमी</div>
+          <div class="timeline-result">👔 पुराने कपड़े फिर से fit होने लगते हैं</div>
+          <div class="timeline-result">💯 पूरी तरह आत्मविश्वास में वृद्धि</div>
+          <div class="timeline-result">🏃 Physical fitness और दौड़ने की क्षमता में सुधार</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; padding: 20px; background: rgba(230,126,34,0.1); border-radius: 12px; border-left: 4px solid var(--red-bright); text-align: center;">
+    <p style="font-size: 0.9rem; color: #666; font-weight: 600;">
+      📝 नोट: ये average timeline है। परिणाम हर व्यक्ति में अलग हो सकते हैं क्योंकि हर body type अलग है। 
+      Best results के लिए Slim Fit Pro + Green Tea Combo 2-3 महीने तक लें।
+    </p>
+  </div>
+
+</section>
+
+<!-- COMPARISON CHART -->
+<section class="comparison-section">
+  <div class="center">
+    <div class="sec-label">📊 तुलना करें</div>
+    <h2 class="sec-title">Slim Fit Pro vs अन्य <span>विकल्प</span></h2>
+    <p class="sec-sub">देखें कि Slim Fit Pro क्यों दूसरे तरीकों से बेहतर है:</p>
+  </div>
+
+  <div class="comparison-table">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th style="width: 25%;">विशेषताएं</th>
+          <th style="width: 18.75%;">Slim Fit Pro</th>
+          <th style="width: 18.75%;">Gym & Diet</th>
+          <th style="width: 18.75%;">Synthetic Pills</th>
+          <th style="width: 18.75%;">Surgery</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="feature-col">🌿 100% Natural & Safe</td>
+          <td><span class="comp-check">✓</span></td>
+          <td><span class="comp-check">✓</span></td>
+          <td><span class="comp-cross">✗</span></td>
+          <td><span class="comp-cross">✗</span></td>
+        </tr>
+        <tr>
+          <td class="feature-col">⏱️ परिणाम का समय</td>
+          <td>4 सप्ताह</td>
+          <td>12+ सप्ताह</td>
+          <td>2 सप्ताह (fake)</td>
+          <td>तुरंत</td>
+        </tr>
+        <tr>
+          <td class="feature-col">💰 सस्ता विकल्प</td>
+          <td><span class="comp-check">✓</span></td>
+          <td><span class="comp-cross">✗</span> (महंगा)</td>
+          <td><span class="comp-check">✓</span></td>
+          <td><span class="comp-cross">✗</span> (बहुत महंगा)</td>
+        </tr>
+        <tr>
+          <td class="feature-col">❌ Side Effects नहीं</td>
+          <td><span class="comp-check">✓</span></td>
+          <td><span class="comp-check">✓</span></td>
+          <td><span class="comp-cross">✗</span></td>
+          <td><span class="comp-cross">✗</span></td>
+        </tr>
+        <tr>
+          <td class="feature-col">💪 Metabolism को ठीक करता है</td>
+          <td><span class="comp-check">✓</span></td>
+          <td><span class="comp-check">✓</span></td>
+          <td><span class="comp-cross">✗</span></td>
+          <td><span class="comp-cross">✗</span></td>
+        </tr>
+        <tr>
+          <td class="feature-col">🧘 Long-term Results</td>
+          <td><span class="comp-check">✓</span></td>
+          <td><span class="comp-check">✓</span></td>
+          <td><span class="comp-cross">✗</span> (rebound होता है)</td>
+          <td><span class="comp-check">✓</span> (लेकिन risky)</td>
+        </tr>
+        <tr>
+          <td class="feature-col">🎓 Ayurvedic Formulation</td>
+          <td><span class="comp-check">✓</span></td>
+          <td><span class="comp-cross">✗</span></td>
+          <td><span class="comp-cross">✗</span></td>
+          <td><span class="comp-cross">✗</span></td>
+        </tr>
+        <tr>
+          <td class="feature-col">🏥 Doctor's Recommendation</td>
+          <td><span class="comp-check">✓</span></td>
+          <td><span class="comp-check">✓</span></td>
+          <td><span class="comp-cross">✗</span></td>
+          <td><span class="comp-check">✓</span> (specific cases के लिए)</td>
+        </tr>
+        <tr>
+          <td class="feature-col">📱 24/7 Expert Support</td>
+          <td><span class="comp-check">✓</span></td>
+          <td><span class="comp-cross">✗</span></td>
+          <td><span class="comp-cross">✗</span></td>
+          <td><span class="comp-cross">✗</span></td>
+        </tr>
+        <tr>
+          <td class="feature-col">🔙 Money Back Guarantee</td>
+          <td><span class="comp-check">✓</span> 30 दिन</td>
+          <td><span class="comp-cross">✗</span></td>
+          <td><span class="comp-cross">✗</span></td>
+          <td><span class="comp-cross">✗</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top: 40px; text-align: center;">
+    <h3 style="font-size: 1.2rem; font-weight: 900; color: var(--green-dark); margin-bottom: 16px;">
+      🎯 Slim Fit Pro को क्यों चुनें?
+    </h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+      <div style="background: rgba(46,139,46,0.08); padding: 16px; border-radius: 12px;">
+        <div style="font-weight: 800; color: var(--green-bright); margin-bottom: 6px;">✓ प्राकृतिक</div>
+        <p style="font-size: 0.85rem; color: #666;">कोई synthetic ingredients या harmful chemicals नहीं</p>
+      </div>
+      <div style="background: rgba(46,139,46,0.08); padding: 16px; border-radius: 12px;">
+        <div style="font-weight: 800; color: var(--green-bright); margin-bottom: 6px;">✓ प्रमाणित</div>
+        <p style="font-size: 0.85rem; color: #666;">10,000+ सुखी customers के साथ proven track record</p>
+      </div>
+      <div style="background: rgba(46,139,46,0.08); padding: 16px; border-radius: 12px;">
+        <div style="font-weight: 800; color: var(--green-bright); margin-bottom: 6px;">✓ समर्थित</div>
+        <p style="font-size: 0.85rem; color: #666;">Ayurvedic doctors द्वारा recommended और approved</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- BMI CALCULATOR -->
+<section style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 80px 60px;">
+  <div class="center">
+    <div class="sec-label">📏 अपना BMI जानें</div>
+    <h2 class="sec-title">अपना स्वास्थ्य <span>स्वयं जांचें</span></h2>
+    <p class="sec-sub">अपनी लंबाई और वज़न दर्ज करें और जानें कि आप किस weight category में हैं। हमारा AI-powered calculator आपको personalized recommendations देगा।</p>
+  </div>
+
+  <div class="bmi-container">
+    <div style="background: #fff; padding: 20px; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.08);">
+      <div class="bmi-input-row">
+        <div class="bmi-input-group">
+          <label>🏃 लंबाई (cm) *</label>
+          <input type="number" id="bmi-height" placeholder="170" min="100" max="250">
+        </div>
+        <div class="bmi-input-group">
+          <label>⚖️ वज़न (kg) *</label>
+          <input type="number" id="bmi-weight" placeholder="85" min="20" max="300">
+        </div>
+      </div>
+
+      <div class="bmi-buttons">
+        <button class="bmi-btn bmi-btn-calc" onclick="calculateBMI()">
+          Calculate
+        </button>
+        <button class="bmi-btn bmi-btn-reset" onclick="resetBMI()">
+          Reset
+        </button>
+      </div>
+
+      <div id="bmi-result"></div>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; padding: 24px; background: rgba(0,0,0,0.04); border-radius: 16px; text-align: center;">
+    <p style="font-size: 0.9rem; color: #666; line-height: 1.7;">
+      <strong>BMI की व्याख्या:</strong><br>
+      🔵 कम वज़न: BMI &lt; 18.5 | 🟢 स्वस्थ: 18.5 - 24.9 | 🟡 अधिक: 25 - 29.9 | 🔴 मोटापा: 30+<br>
+      <br>यह एक सामान्य जानकारी है। विस्तृत स्वास्थ्य सलाह के लिए अपने doctor से मिलें।
+    </p>
+  </div>
+
+</section>
+
+<!-- DOCTOR/EXPERT TESTIMONIALS -->
+<section class="doctor-testimonials">
+  <div class="center">
+    <div class="sec-label">👨‍⚕️ विशेषज्ञ की राय</div>
+    <h2 class="sec-title">आयुर्वेद के <span>डॉक्टर</span> क्या कहते हैं?</h2>
+    <p class="sec-sub">Prakriti Herbal के सभी products top आयुर्वेदिक practitioners द्वारा approved हैं।</p>
+  </div>
+
+  <div class="doctor-grid">
+    <div class="doctor-card">
+      <div class="doctor-header">
+        <div class="doctor-avatar">👨</div>
+        <div class="doctor-info">
+          <h3>डॉ. राज कुमार शर्मा</h3>
+          <div class="doctor-cred">MD Ayurveda, पाचन विशेषज्ञ</div>
+          <div class="doctor-exp">22+ सालों का अनुभव</div>
+        </div>
+      </div>
+      <div class="doctor-video" onclick="alert('🎥 डॉक्टर का video testimonial यहाँ होगा')">
+        ▶️
+      </div>
+      <blockquote class="doctor-quote">
+        "Slim Fit Pro का formula absolutely शानदार है। मैंने 100+ मरीजों को prescribe किया है और 80% को excellent results मिले हैं। Green Tea के साथ combination बहुत powerful है।"
+      </blockquote>
+      <div class="doctor-rating">
+        ⭐⭐⭐⭐⭐ 5.0 (Based on 324 patients)
+      </div>
+    </div>
+
+    <div class="doctor-card">
+      <div class="doctor-header">
+        <div class="doctor-avatar">👩</div>
+        <div class="doctor-info">
+          <h3>डॉ. प्रिया वर्मा</h3>
+          <div class="doctor-cred">BAMS, Holistic Health Coach</div>
+          <div class="doctor-exp">18+ सालों का अनुभव</div>
+        </div>
+      </div>
+      <div class="doctor-video" onclick="alert('🎥 डॉक्टर का video testimonial यहाँ होगा')">
+        ▶️
+      </div>
+      <blockquote class="doctor-quote">
+        "मुझे सबसे ज़्यादा पसंद है कि Slim Fit Pro completely natural है। मेरी practice में मैंने देखा है कि यह product digestive system को strengthen करता है साथ ही weight भी घटाता है।"
+      </blockquote>
+      <div class="doctor-rating">
+        ⭐⭐⭐⭐⭐ 4.9 (Based on 187 patients)
+      </div>
+    </div>
+
+    <div class="doctor-card">
+      <div class="doctor-header">
+        <div class="doctor-avatar">👨</div>
+        <div class="doctor-info">
+          <h3>डॉ. अनिल मिश्रा</h3>
+          <div class="doctor-cred">Ayurvedic Practitioner & Formulation Expert</div>
+          <div class="doctor-exp">26+ सालों का अनुभव</div>
+        </div>
+      </div>
+      <div class="doctor-video" onclick="alert('🎥 डॉक्टर का video testimonial यहाँ होगा')">
+        ▶️
+      </div>
+      <blockquote class="doctor-quote">
+        "यह formula centuries पुरानी Ayurvedic knowledge को modern science के साथ combine करता है। Guggul, Triphala और Green Tea का combination metabolism को naturally boost करता है।"
+      </blockquote>
+      <div class="doctor-rating">
+        ⭐⭐⭐⭐⭐ 5.0 (Based on 412 patients)
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 50px; padding: 32px; background: linear-gradient(135deg, rgba(46,139,46,0.1), rgba(14,107,94,0.1)); border-radius: 20px; text-align: center; border: 2px solid rgba(46,139,46,0.2);">
+    <h3 style="font-size: 1.2rem; font-weight: 900; color: var(--green-dark); margin-bottom: 12px;">📋 सभी Doctors की सहमति</h3>
+    <p style="font-size: 0.95rem; color: #666; line-height: 1.8;">
+      "Slim Fit Pro एक well-researched formula है जो आयुर्वेदिक principles पर आधारित है। यह sustainable weight loss के लिए perfect है। हम इसे अपने सभी मरीजों को confidently recommend कर सकते हैं।"
+    </p>
+    <p style="font-size: 0.85rem; color: #999; margin-top: 12px; font-style: italic;">
+      - Delhi Ayurvedic Society, 2024
+    </p>
   </div>
 
 </section>
@@ -1529,5 +2158,8 @@ document.querySelectorAll('.ben-card,.testi-card,.step-card,.prob-card,.plan-car
   io.observe(el);
 });
 </script>
+
+<!-- BMI Calculator Script -->
+<script src="bmi-calculator.js"></script>
 </body>
 </html>
