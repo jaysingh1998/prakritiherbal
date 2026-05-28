@@ -1958,8 +1958,8 @@
 <div class="sticky-float" id="sfloat">
   <a href="#order">🌿 Free Consultation लें →</a>
 </div>
-<div class="scroll-top" id="scrollTopBtn" title="Top पर जाएँ" onclick="scrollToTop()">
-  <span>↑</span>
+<div class="scroll-top" id="scrollTopBtn" title="Scroll" onclick="scrollToMiddle()">
+  <span>↓</span>
 </div>
 <a class="whatsapp-float" href="https://wa.me/918357899581?text=मुझे%20वजन%20कम%20करने%20की%20जानकारी%20चाहिए" target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
@@ -2004,12 +2004,42 @@
 window.addEventListener('scroll',function(){
   document.getElementById('sfloat').style.display=window.scrollY>600?'block':'none';
   const scrollBtn = document.getElementById('scrollTopBtn');
-  if(scrollBtn) scrollBtn.style.display = window.scrollY>500 ? 'grid' : 'none';
+  if(scrollBtn) scrollBtn.style.display = window.scrollY>200 ? 'grid' : 'none';
+  updateScrollArrow();
 });
 
-function scrollToTop(){
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function scrollToMiddle(){
+  const centerPos = (document.documentElement.scrollHeight - window.innerHeight) / 2;
+  const currentScroll = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const docHeight = document.documentElement.scrollHeight;
+  const scrollCenter = (docHeight - windowHeight) / 2;
+  
+  if (currentScroll < scrollCenter) {
+    window.scrollTo({ top: docHeight, behavior: 'smooth' });
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
+
+function updateScrollArrow(){
+  const windowHeight = window.innerHeight;
+  const docHeight = document.documentElement.scrollHeight;
+  const scrollTop = window.scrollY;
+  const scrollCenter = (docHeight - windowHeight) / 2;
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  
+  if (scrollBtn) {
+    const span = scrollBtn.querySelector('span');
+    if (span) {
+      span.textContent = scrollTop < scrollCenter ? '↓' : '↑';
+    }
+  }
+}
+
+window.addEventListener('scroll', updateScrollArrow);
+window.addEventListener('resize', updateScrollArrow);
+updateScrollArrow();
 
 // Plan Tabs
 function showPlans(type){
@@ -2158,6 +2188,9 @@ document.querySelectorAll('.ben-card,.testi-card,.step-card,.prob-card,.plan-car
   io.observe(el);
 });
 </script>
+
+<!-- BMI Calculator Script -->
+<script src="bmi-calculator.js"></script>
 
 <!-- BMI Calculator Script -->
 <script src="bmi-calculator.js"></script>
