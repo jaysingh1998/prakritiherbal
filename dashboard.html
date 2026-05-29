@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lead Dashboard | Prakriti Herbal</title>
+  <style>
+    :root { font-family: Inter, system-ui, sans-serif; color: #1e1e1e; background: #f8fafc; }
+    body { margin: 0; padding: 0; }
+    header { background:#184e31; color:#fff; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; }
+    header a, header button { color:#fff; text-decoration:none; font-weight:600; }
+    header button { border:1px solid rgba(255,255,255,.35); background:rgba(255,255,255,.12); border-radius:10px; padding:10px 16px; }
+    main { max-width:1200px; margin:24px auto; padding:0 18px; }
+    .panel { background:#fff; border-radius:20px; box-shadow:0 14px 50px rgba(0,0,0,.08); padding:28px; }
+    h1 { margin:0 0 12px; font-size:2rem; }
+    .controls { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-bottom:20px; }
+    .controls label { font-size:0.95rem; color:#334155; }
+    select, button, input { border:1px solid #cbd5e1; border-radius:10px; padding:10px 14px; font-size:0.95rem; }
+    input { width:100%; max-width:420px; }
+    button { background:#184e31; color:#fff; cursor:pointer; }
+    button:hover { opacity:0.92; }
+    #status { margin-bottom:16px; color:#475569; }
+    .table-wrap { overflow-x:auto; margin-top: 12px; }
+    table { width:100%; border-collapse:collapse; min-width:1400px; table-layout: fixed; }
+    th, td { text-align:left; padding:12px 14px; border-bottom:1px solid #e2e8f0; vertical-align: top; }
+    th { background:#f1f5f9; color:#0f172a; font-weight:700; position:sticky; top:0; z-index:1; white-space: nowrap; }
+    tr:hover { background:#f8fafc; }
+    .value-break { white-space:normal; word-break:break-word; }
+    .auth-row { margin-bottom:16px; display:flex; flex-direction:column; gap:8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>Prakriti Herbal Lead Dashboard</div>
+    <nav>
+      <a href="index.html">Back to Home</a>
+      <button id="logoutBtn" style="display:none; border:none; background:#fff; color:#184e31; padding:10px 16px; border-radius:10px; font-weight:700; cursor:pointer;">Logout</button>
+    </nav>
+  </header>
+  <main>
+    <div class="panel" id="login-panel">
+      <h1>Admin Login</h1>
+      <div id="auth-error" style="color:#b91c1c; margin-bottom:16px; display:none;"></div>
+      <div class="auth-row">
+        <label>Email</label>
+        <input id="loginEmail" type="email" placeholder="admin@example.com" />
+      </div>
+      <div class="auth-row">
+        <label>Password</label>
+        <input id="loginPassword" type="password" placeholder="Password" />
+      </div>
+      <button id="loginBtn">Login</button>
+      <p style="margin-top:16px; color:#475569;">Use your Firebase admin email and password to access the leads dashboard.</p>
+    </div>
+
+    <div class="panel" id="dashboard-panel" style="display:none;">
+      <h1>Leads Captured</h1>
+      <div class="controls">
+        <label>Filter by form:
+          <select id="filter">
+            <option value="all">All Forms</option>
+            <option value="Form 1">Form 1</option>
+            <option value="Form 2">Form 2</option>
+          </select>
+        </label>
+        <button id="refreshBtn">Refresh</button>
+      </div>
+      <div id="status">Please login to view leads.</div>
+      <div class="table-wrap">
+        <table id="lead-table">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-auth.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCjeKN6beIGtqAHoxKhUkOghsGjJLgu8tQ",
+      authDomain: "prakriti-herbal.firebaseapp.com",
+      projectId: "prakriti-herbal",
+      storageBucket: "prakriti-herbal.firebasestorage.app",
+      messagingSenderId: "506254287519",
+      appId: "1:506254287519:web:4cf6738ac8bb17290078aa",
+      measurementId: "G-N8P0W7ZH46"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const tableHead = document.querySelector('#lead-table thead');
+    const tableBody = document.querySelector('#lead-table tbody');
+    const statusEl = document.getElementById('status');
+    const filterEl = document.getElementById('filter');
+    const loginPanel = document.getElementById('login-panel');
+    const dashboardPanel = document.getElementById('dashboard-panel');
+    const authError = document.getElementById('auth-error');
+    const loginEmail = document.getElementById('loginEmail');
+    const loginPassword = document.getElementById('loginPassword');
+    const loginBtn = document.getElementById('loginBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    function showLogin(message){
+      loginPanel.style.display = 'block';
+      dashboardPanel.style.display = 'none';
+      logoutBtn.style.display = 'none';
+      statusEl.textContent = 'Please login to view leads.';
+      authError.style.display = message ? 'block' : 'none';
+      authError.textContent = message || '';
+      tableHead.innerHTML = '';
+      tableBody.innerHTML = '';
+    }
+
+    function showDashboard(user){
+      loginPanel.style.display = 'none';
+      dashboardPanel.style.display = 'block';
+      logoutBtn.style.display = 'inline-flex';
+      statusEl.textContent = `Logged in as ${user.email}. Loading leads...`;
+      authError.style.display = 'none';
+      loadLeads();
+    }
+
+    function formatValue(value){
+      if(value && typeof value.toDate === 'function'){
+        return new Date(value.toDate()).toLocaleString();
+      }
+      if(value === true || value === false){
+        return String(value);
+      }
+      return value ?? '';
+    }
+
+    function normalizeLead(lead){
+      return {
+        createdAt: lead.createdAt,
+        Name: lead.f_name || lead.qf_name || lead.name || '',
+        Phone: lead.f_phone || lead.qf_phone || lead.phone || '',
+        Plan: lead.f_plan || lead.qf_plan || lead.plan || '',
+        Goal: lead.f_goal || lead.qf_goal || lead.goal || '',
+        Weight: lead.f_weight || lead.weight || ''
+      };
+    }
+
+    function renderLeads(leads){
+      if(!leads.length){
+        tableHead.innerHTML = '';
+        tableBody.innerHTML = '<tr><td colspan="6">No leads found.</td></tr>';
+        return;
+      }
+
+      const normalized = leads.map(normalizeLead);
+      const headerKeys = ['createdAt','Name','Phone','Plan','Goal','Weight'];
+
+      tableHead.innerHTML = '<tr>' + headerKeys.map(key => `<th>${key}</th>`).join('') + '</tr>';
+      tableBody.innerHTML = normalized.map(lead => {
+        return '<tr>' + headerKeys.map(key => `<td class="value-break">${formatValue(lead[key])}</td>`).join('') + '</tr>';
+      }).join('');
+    }
+
+    function applyFilter(leads){
+      const filter = filterEl.value;
+      if(filter === 'all') return leads;
+      return leads.filter(lead => lead.sourceForm === filter);
+    }
+
+    async function loadLeads(){
+      statusEl.textContent = 'Loading leads...';
+      tableHead.innerHTML = '';
+      tableBody.innerHTML = '';
+      try{
+        const querySnapshot = await getDocs(collection(db, 'Lead_Capture_Prakriti_Herbal'));
+        const leads = [];
+        querySnapshot.forEach(doc => leads.push({ id: doc.id, ...doc.data() }));
+        leads.sort((a,b) => {
+          const at = a.createdAt?.seconds || 0;
+          const bt = b.createdAt?.seconds || 0;
+          return bt - at;
+        });
+        const filtered = applyFilter(leads);
+        renderLeads(filtered);
+        statusEl.textContent = `Showing ${filtered.length} of ${leads.length} lead(s)`;
+      } catch(error){
+        statusEl.textContent = 'Unable to load leads. Check Firebase permissions and network.';
+        console.error('Load leads failed', error);
+      }
+    }
+
+    async function handleLogin(){
+      authError.style.display = 'none';
+      authError.textContent = '';
+      const email = loginEmail.value.trim();
+      const password = loginPassword.value;
+      if(!email || !password){
+        showLogin('Please enter email and password.');
+        return;
+      }
+      try{
+        await signInWithEmailAndPassword(auth, email, password);
+      } catch(error){
+        showLogin(`Login failed: ${error.message || error.code}`);
+      }
+    }
+
+    async function handleLogout(){
+      await signOut(auth);
+      showLogin('You have been logged out.');
+    }
+
+    onAuthStateChanged(auth, user => {
+      if(user){
+        showDashboard(user);
+      } else {
+        showLogin();
+      }
+    });
+
+    loginBtn.addEventListener('click', handleLogin);
+    logoutBtn.addEventListener('click', handleLogout);
+    filterEl.addEventListener('change', loadLeads);
+    document.getElementById('refreshBtn').addEventListener('click', loadLeads);
+  </script>
+</body>
+</html>

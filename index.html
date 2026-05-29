@@ -1948,7 +1948,7 @@
 <!-- FOOTER -->
 <footer>
   <p style="font-size: 1.1rem; color: var(--gold-light); font-weight: 900; margin-bottom: 8px;">🌿 Prakriti Herbal</p>
-  <p>© 2025 Prakriti Herbal Wellness. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
+  <p>© 2025 Prakriti Herbal Wellness. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a> | <a href="dashboard.html">Admin Dashboard</a></p>
   <p style="margin-top:6px;font-size:0.74rem;max-width:600px;margin-left:auto;margin-right:auto">
     *Results may vary. This product is not a substitute for medical treatment. Consult a healthcare professional before use.
   </p>
@@ -2079,7 +2079,25 @@ async function sendToNeoDove(payload){
   }
 }
 
-// Quick Hero Form Submit
+function collectFormData(containerId){
+  const data = {};
+  const root = document.getElementById(containerId);
+  if(!root) return data;
+  root.querySelectorAll('input, select, textarea').forEach(el => {
+    const key = el.id || el.name;
+    if(!key) return;
+    if(el.type === 'radio'){
+      if(!el.checked) return;
+    }
+    if(el.type === 'checkbox'){
+      data[key] = el.checked;
+      return;
+    }
+    data[key] = el.value.trim();
+  });
+  return data;
+}
+
 async function submitQuickForm(){
   const name=document.getElementById('qf_name').value.trim();
   const phone=document.getElementById('qf_phone').value.trim();
@@ -2104,7 +2122,15 @@ async function submitQuickForm(){
     form_name: 'quick_form'
   };
 
-  const leadData = {name, phone, plan, source:'hero', ts:new Date().toISOString()};
+  const formData = collectFormData('quick-form');
+  const leadData = {
+    ...formData,
+    sourceForm: 'Form 1',
+    source: 'hero',
+    formId: 'quick_form',
+    ts: new Date().toISOString()
+  };
+
   let leads = JSON.parse(localStorage.getItem('prakriti_leads') || '[]');
   leads.push(leadData);
   localStorage.setItem('prakriti_leads', JSON.stringify(leads));
@@ -2119,9 +2145,13 @@ async function submitQuickForm(){
   } else {
     alert('⚠️ अभी NeoDove से कनेक्ट नहीं हो पाया। आपका lead local में save हो गया है।');
   }
+
+  if(window.saveLeadToFirestore){
+    const saved = await window.saveLeadToFirestore(leadData);
+    if(!saved) console.warn('Firestore save failed for quick form', leadData);
+  }
 }
 
-// Form Submit
 async function submitLead(){
   const fullName=document.getElementById('f_name').value.trim();
   const phone=document.getElementById('f_phone').value.trim();
@@ -2150,7 +2180,15 @@ async function submitLead(){
     form_name: 'order_form'
   };
 
-  const leadData = {name: fullName,phone,plan,goal,weight,source:'bottom', ts:new Date().toISOString()};
+  const formData = collectFormData('form-body');
+  const leadData = {
+    ...formData,
+    sourceForm: 'Form 2',
+    source: 'bottom',
+    formId: 'order_form',
+    ts: new Date().toISOString()
+  };
+
   let leads = JSON.parse(localStorage.getItem('prakriti_leads') || '[]');
   leads.push(leadData);
   localStorage.setItem('prakriti_leads', JSON.stringify(leads));
@@ -2160,6 +2198,11 @@ async function submitLead(){
     console.log('NeoDove lead submitted', neoPayload);
   } else {
     console.warn('NeoDove submit failed, saved locally', neoPayload);
+  }
+
+  if(window.saveLeadToFirestore){
+    const saved = await window.saveLeadToFirestore(leadData);
+    if(!saved) console.warn('Firestore save failed for bottom form', leadData);
   }
 
   document.getElementById('form-body').style.display='none';
@@ -2191,13 +2234,11 @@ document.querySelectorAll('.ben-card,.testi-card,.step-card,.prob-card,.plan-car
 
 <!-- BMI Calculator Script -->
 <script src="bmi-calculator.js"></script>
-
-<!-- BMI Calculator Script -->
-<script src="bmi-calculator.js"></script>
-  <script type="module">
+<script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-analytics.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -2216,6 +2257,23 @@ document.querySelectorAll('.ben-card,.testi-card,.step-card,.prob-card,.plan-car
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  async function saveLeadToFirestore(data) {
+    try {
+      const docRef = await addDoc(collection(db, 'Lead_Capture_Prakriti_Herbal'), {
+        ...data,
+        createdAt: serverTimestamp()
+      });
+      console.log('Firestore lead saved:', docRef.id, data);
+      return true;
+    } catch (error) {
+      console.error('Firestore save failed', error, data);
+      return false;
+    }
+  }
+
+  window.saveLeadToFirestore = saveLeadToFirestore;
 </script>
 </body>
 </html>
